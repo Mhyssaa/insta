@@ -36,13 +36,13 @@ if( isset($_SESSION["logged_in"])){
 
 
 
-if(isset($_GET['page']) && file_exists($_GET['page'].'.php') ){
+if(isset($_GET['page']) && file_exists("assets/php/".$_GET['page'].'.php') ){
     
-    require_once($_GET['page'] .".php");
+    require_once("assets/php/".$_GET['page'] .".php");
 
 }else{
     
-    require_once('assets/home.php');
+    require_once('assets/php/inscription.php');
 
 }
 
