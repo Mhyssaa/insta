@@ -32,7 +32,7 @@
         <section>
 
             <div>
-                <span class="iconify" data-icon="la:fly" style="color: #2b2238;"></span>
+                <span class="iconify" data-icon="la:fly" style="color: #2b2238;" data-width="50" data-height="50"></span>
             </div>
 
         </section>

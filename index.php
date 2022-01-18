@@ -29,7 +29,7 @@ if( isset($_SESSION["logged_in"])){
 
 
 
-<?php require_once('template/header.php'); ?>
+<?php require_once('assets/template/header.php'); ?>
 
 
 <?php
@@ -42,14 +42,14 @@ if(isset($_GET['page']) && file_exists($_GET['page'].'.php') ){
 
 }else{
     
-    require_once('home.php');
+    require_once('<assets/home.php');
 
 }
 
 ?>
 
 
-<?php require_once('template/footer.php'); ?>
+<?php require_once('assets/template/footer.php'); ?>
 
 
 
