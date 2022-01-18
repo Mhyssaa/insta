@@ -3,16 +3,16 @@
 
 session_start(); 
 
-
-if( isset($_SESSION["logged_in"])){
+if( isset($_SESSION["logged_in"]["iduser"])){
     
-    $verif_co = $_SESSION["logged_in"]["id"];
-
+    $verif_co = $_SESSION["logged_in"]["iduser"];
+    
 }else{
- 
-    $verif_co = 0;
 
+    $verif_co = 0;
+    
 }
+
 
 ?>
 
@@ -36,13 +36,14 @@ if( isset($_SESSION["logged_in"])){
 
 
 
-if(isset($_GET['page']) && file_exists($_GET['page'].'.php') ){
+if(isset($_GET['page']) && file_exists("assets/php/".$_GET['page'].'.php') ){
     
-    require_once($_GET['page'] .".php");
+    require_once("assets/php/".$_GET['page'] .".php");
 
 }else{
-    
+
     require_once('assets/php/home.php');
+    // require_once('assets/php/connexion.php');
 
 }
 
