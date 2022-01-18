@@ -29,19 +29,7 @@
 
         </section>
 
-        <section>
-
-            <div>
-                <span class="iconify" data-icon="la:fly" style="color: #2b2238;" data-width="50" data-height="50"></span>
-            </div>
-
-        </section>
-
-
-
     </main>
     
-
-    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
 </body>
 </html>
