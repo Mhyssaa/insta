@@ -1,0 +1,25 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+    margin: auto;
+}
+
+.image_post {
+    width: 300px;
+    height: 400px;
+}
+.iconify {
+    margin-right: 20px;
+}
+
+.center {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+.post {
+    text-align: center;
+}
