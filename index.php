@@ -42,7 +42,7 @@ if(isset($_GET['page']) && file_exists($_GET['page'].'.php') ){
 
 }else{
     
-    require_once('assets/home.php');
+    require_once('assets/php/home.php');
 
 }
 
