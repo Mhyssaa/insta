@@ -9,14 +9,14 @@
 <img src="assets/Img/Other_Profile/user.png" alt="" class="img-user" />
         </div>
         <div class="infos">
-<p>Pseudo</p>
+<p class="p-pseudo">Pseudo</p>
 <p>Description</p>
 <div class="abonnements">
     <div class="abonnés">
-         <button type="button">S'abonner</button> 
+         <button type="button" class="subscribe-button">S'abonner</button> 
     </div>
   <div class="se_désabonner">
-      Se désabonner
+      <img src="assets/Img/Other_Profile/cancel.png" alt="" class="cancel_img" />
   </div>
 </div>
 
@@ -34,24 +34,60 @@
 </div>
 
 <!-- Photos -->
-<div class="Photos-Section">
+<div class="Photos_Section">
     <div class="photo">
-        Photo 1
+        <div class="img">
+         <img src="assets/Img/Other_Profile/ecureuil.jpg" alt="" class="img_photo" />   
+        </div>
+        <div class="avis">
+        <img src="assets/Img/Other_Profile/heart.svg" alt="" class="heart" />
+        <img src="assets/Img/Other_Profile/comment.svg" alt="" class="comment" />
+        </div>
     </div>
     <div class="photo">
-        Photo 2
+        <div class="img">
+         <img src="assets/Img/Other_Profile/ecureuil.jpg" alt="" class="img_photo" />   
+        </div>
+        <div class="avis">
+        <img src="assets/Img/Other_Profile/heart.svg" alt="" class="heart" />
+        <img src="assets/Img/Other_Profile/comment.svg" alt="" class="comment" />
+        </div>
     </div>
     <div class="photo">
-        Photo 3
+        <div class="img">
+         <img src="assets/Img/Other_Profile/ecureuil.jpg" alt="" class="img_photo" />   
+        </div>
+        <div class="avis">
+        <img src="assets/Img/Other_Profile/heart.svg" alt="" class="heart" />
+        <img src="assets/Img/Other_Profile/comment.svg" alt="" class="comment" />
+        </div>
     </div>
     <div class="photo">
-        Photo 4
+        <div class="img">
+         <img src="assets/Img/Other_Profile/ecureuil.jpg" alt="" class="img_photo" />   
+        </div>
+        <div class="avis">
+        <img src="assets/Img/Other_Profile/heart.svg" alt="" class="heart" />
+        <img src="assets/Img/Other_Profile/comment.svg" alt="" class="comment" />
+        </div>
     </div>
     <div class="photo">
-        Photo 5
+        <div class="img">
+         <img src="assets/Img/Other_Profile/ecureuil.jpg" alt="" class="img_photo" />   
+        </div>
+        <div class="avis">
+        <img src="assets/Img/Other_Profile/heart.svg" alt="" class="heart" />
+        <img src="assets/Img/Other_Profile/comment.svg" alt="" class="comment" />
+        </div>
     </div>
     <div class="photo">
-        Photo 6
+        <div class="img">
+         <img src="assets/Img/Other_Profile/ecureuil.jpg" alt="" class="img_photo" />   
+        </div>
+        <div class="avis">
+            <img src="assets/Img/Other_Profile/heart.svg" alt="" class="heart" />
+            <img src="assets/Img/Other_Profile/comment.svg" alt="" class="comment" />
+        </div>
     </div>
 </div>
 </main>
