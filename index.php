@@ -27,8 +27,6 @@ if( isset($_SESSION["logged_in"]["iduser"])){
 </head>
 <body>
 
-
-
 <?php require_once('assets/template/header.php'); ?>
 
 
