@@ -4,7 +4,7 @@ $id = htmlspecialchars($_POST["idpost"]);
 echo $id;
 
 $pseudo = htmlspecialchars(addslashes($_POST["pseudo"]));
-$messageLegend = htmlspecialchars(addslashes($_POST["legend"]));
+$messageLegend = htmlspecialchars(addslashes($_POST["legende"]));
 
 require("bdd/bddconfig.php");
 
@@ -14,11 +14,11 @@ try{
  
     $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $recup = $objBdd->prepare("UPDATE `post` SET `pseudo` = :pseudo , `avis` = :messageLegende WHERE `idpost` = $id ");
+    $recup = $objBdd->prepare("UPDATE `post` SET `pseudo` = :pseudo , `legende` = :messageLegende WHERE `idpost` = $id ");
     
     $recup->bindParam(':pseudo' , $pseudo , PDO::PARAM_STR);
     
-    $recup->bindParam(':messageAdd' , $messageAdd , PDO::PARAM_STR);
+    $recup->bindParam(':messageLegend' , $messageLegend , PDO::PARAM_STR);
    
     $recup->execute();
     

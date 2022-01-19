@@ -3,4 +3,4 @@
 $bddserver = "localhost:3308";
         $bddname = "evo";
         $bddlogin = "root";
-        $bddpass = "root";
+        $bddpass = "";

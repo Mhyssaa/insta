@@ -1,0 +1,24 @@
+/* Profile Section */
+
+.Profile_Section {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.profil {
+  border: 2px solid #8f249e;
+  border-radius: 10px;
+}
+.img-user {
+  padding: 20px;
+  width: 5em;
+}
+.infos {
+  width: 700px;
+}
+.abonnements {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
