@@ -10,7 +10,7 @@
 
         <section id="section1">
 
-            <h1 id="bjr">Bonjour</h1>
+            <h1 id="titre">Bonjour</h1>
             <div id="barre"></div>
 
         </section>
