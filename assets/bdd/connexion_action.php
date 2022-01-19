@@ -7,7 +7,7 @@ $mdp =  htmlspecialchars(strval($_POST["mdp"]));
 
 try{
 
-    // on va verifier si l'email et mot de passe ne sont pas vide
+    // on va verifier si l'email et mot de passe ne sont pas vides
     if($pseudo != ""  && $mdp!= "") {
     
         require('../bdd/bddconfig.php');
@@ -18,7 +18,7 @@ try{
         $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // ici on prepare notre requête SQL
         $PDOlistlogins = $objBdd->prepare("SELECT * FROM user, file WHERE pseudo = :pseudo");
-        // on initialise notre :email avec la variable qui récup le email
+        // on initialise notre :pseudo avec la variable qui récup le pseudo
         $PDOlistlogins->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
         // execute la requête SQL
         $PDOlistlogins->execute();
@@ -35,7 +35,7 @@ try{
     
                 // on stock les données utilisateur dans un tableau
                 $session_data = array(
-                    'id' => $row_userweb['iduser'],
+                    'iduser' => $row_userweb['iduser'],
                     'pseudo' => $row_userweb['pseudo'],
                 );
     
@@ -62,6 +62,7 @@ try{
     
     } else {
         header("Location: ../../index.php");
+        // header("Location: ../php/home.php");
     }
     
 

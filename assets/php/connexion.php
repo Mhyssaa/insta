@@ -1,16 +1,3 @@
-    
-<?php
-
-//  si 0 !=  l'utilisateur est connecter
-if( $verif_co != 0){
-    
-    //header("Location: index.php");
-    
-}
-
-?>
-
-
 <head>
     <link rel="stylesheet" href="css/connexion.css">
 </head>
