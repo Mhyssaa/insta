@@ -2,13 +2,23 @@
     <link rel="stylesheet" href="assets/css/style_profil.css">
 </head>
 
-<div>
-    <div>
-        <div></div>
-    </div>
-    <p>Pseudo</p>
-    <span></span>
 
+<div class="profil">
+    <div class="avatar">
+        <span class="iconify" data-icon="carbon:user-avatar-filled"></span>
+    </div>
+    <div class="info-profil">
+        <p>@Pseudo 
+            <br>
+        <span class="description">description </span> 
+        </p>
+    </div>
+</div>
+
+<div class="info-compte">
+    <p>0 Publication</p>
+    <p>0 Abonnés</p>
+    <p>0 Abonnement</p>
 </div>
 
 <p class="post">Créer un post</p>

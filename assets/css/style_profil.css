@@ -9,6 +9,7 @@
 .image_post {
     width: 300px;
     height: 400px;
+    border-radius: 10px;
 }
 .iconify {
     margin-right: 20px;
@@ -18,8 +19,60 @@
     display: flex;
     width: 80%;
     margin: auto;
+    flex-wrap: wrap;
 }
 
 .post {
     text-align: center;
+    font-size: 30px;
+    margin-bottom: 100px;
+}
+
+.profil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    flex-wrap: wrap;
+
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    border: 10px solid black;
+    border-radius: 10px;
+    margin-right: 20px;
+    flex-wrap: wrap;
+}
+
+.avatar .iconify {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+}
+
+.info-profil {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.description {
+    font-size: 26px;
+}
+
+.info-compte{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    width: 800px;
+    margin: auto;
+    font-size: 27px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
 }
