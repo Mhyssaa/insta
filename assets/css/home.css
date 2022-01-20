@@ -1,0 +1,37 @@
+html, body {
+    padding: 0%;
+    margin: 0%;
+    scroll-behavior: smooth;
+}
+
+/*Police d'écriture*/
+@import url('https://fonts.googleapis.com/css2?family=Radley&display=swap');
+
+main {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Radley', Arial, Helvetica, serif;
+    color: #2b2238;
+}
+
+    #section1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        #titre {
+            background: linear-gradient(-100deg, #8F249E , #D1498D );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+    #section2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+        #like_com {
+            display: flex;
+        }
