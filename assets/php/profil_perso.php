@@ -5,7 +5,7 @@
 
 <div class="profil">
     <div class="avatar">
-        <span class="iconify" data-icon="carbon:user-avatar-filled"></span>
+        <span class="avatar-default iconify" data-icon="carbon:user-avatar-filled"></span>
     </div>
     <div class="info-profil">
         <p>@Pseudo 

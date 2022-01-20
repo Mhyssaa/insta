@@ -43,10 +43,11 @@
     align-items: center;
     height: 200px;
     width: 200px;
-    border: 10px solid black;
-    border-radius: 10px;
     margin-right: 20px;
     flex-wrap: wrap;
+
+    box-shadow: 0 0 0 13px rgb(0, 0, 0);
+    border-radius: 10px;
 }
 
 .avatar .iconify {
@@ -75,4 +76,8 @@
     margin-top: 50px;
     margin-bottom: 50px;
     flex-wrap: wrap;
+}
+
+svg{
+    border-radius: 10px;
 }
