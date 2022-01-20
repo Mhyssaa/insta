@@ -2,8 +2,8 @@
 
 session_start();
 // on recup la saisie de l'utilisateur en POST
-$pseudo = htmlspecialchars(strtolower($_POST["email"]));
-$mdp =  htmlspecialchars(strval($_POST["mdp"]));
+$pseudo = htmlspecialchars(strtolower($_POST["pseudo"]));
+$mdp =  htmlspecialchars($_POST["mdp"]);
 
 try{
 
@@ -25,6 +25,8 @@ try{
     
         // on initialise une variable avec les données de utilisateur
         $row_userweb = $PDOlistlogins->fetch();
+
+        echo $row_userweb["mdp"];
     
         if ($row_userweb != false) {
     
