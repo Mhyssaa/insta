@@ -17,23 +17,20 @@
 
         <form id="form" action="assets/bdd/upload_action.php" method="POST" enctype="multipart/form-data">
 
+            <div>
+                Ajouter une image
+            </div>
+            
+            <input id="input_file" type="file" name="file" accept=".jpg, .jpeg, .png, .gif">
 
-        <div>
-            Ajouter une image
-        </div>
-        
-        <input id="input_file" type="file" name="file" accept=".jpg, .jpeg, .png, .gif">
+            <button type="submit">Enregistrer</button> 
 
-        <button type="submit">Enregistrer</button> 
-
-    </form>
-
-        <section id="section2">
+        </form>
 
             <?php
 
                 require("assets/bdd/bddconfig.php");
-
+                
                 try {
 
                     $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
@@ -48,24 +45,36 @@
                 }
 
             ?>
-
+            
+        <section id="section2">
 
             <?php
 
             while ($messageSimple = $recup->fetch()) {
 
             ?>
-                <div>
 
-                    <!-- <a href="index.php?page=other_profile&id=<?php echo $messageSimple["iduser"] ?>"> -->
+                <div class="content_post">
+                    
+                    <div>
+                        <!-- Générer pseudo -->
+                        <h2 id="post_pseudo">@<?php echo stripslashes($messageSimple["pseudo"]); ?></h2>
 
-                    <h1><?php echo stripslashes($messageSimple["pseudo"]); ?></h1>
+                    </div>
 
-                </div>
+                    <div>
+                        <!-- Générer image -->
+                        <img id="post_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
 
-                <div>
+                    </div>
 
-                    <img src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
+                    <div id="like_com">
+
+                        <div class="heart"></div>
+
+                        <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span></div>
+
+                    </div>
 
                 </div>
 
@@ -73,18 +82,11 @@
             }
             ?>
 
-            <div id="like_com">
-
-                <div><span class="iconify" data-icon="dashicons:heart" style="color: #c276b7;" data-width="50"></span></div>
-
-                <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="50"></span></div>
-                
-            </div>
-
         </section>
 
     </main>
     
     <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+    <script src="assets/js/script_heart.js"></script>
 </body>
 </html>
