@@ -2,7 +2,7 @@
 
 session_start();
 // on recup la saisie de l'utilisateur en POST
-$pseudo = htmlspecialchars(strtolower($_POST["email"]));
+$pseudo = htmlspecialchars(strtolower($_POST["pseudo"]));
 $mdp =  htmlspecialchars(strval($_POST["mdp"]));
 
 try{
@@ -51,18 +51,21 @@ try{
             } else {
                 //Mauvais password
                 session_destroy();
-                die('Authentification incorrecte');
+                header("Location: ../../index.php?page=connexion" );
             }
     
         } else {
             //Mauvais login
             session_destroy();
-            die('Authentification incorrecte');
+            header("Location: ../../index.php?page=connexion" );
         }
     
     } else {
         header("Location: ../../index.php");
     }
+
+    
+
     
 
 }catch( Exception $prmE){
@@ -70,4 +73,9 @@ try{
     die("Erreur" . $prmE->getMessage());
 
 
+
+
+    
 }
+
+
