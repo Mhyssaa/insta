@@ -6,6 +6,8 @@ $tmpName = $_FILES['file']['tmp_name'];
 $name = $_FILES['file']['name'];
 $size = $_FILES['file']['size'];
 $error = $_FILES['file']['error'];
+$idpost = 1;
+$idcompte = 20;
 
 try{
 
@@ -26,18 +28,20 @@ try{
             
             $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
             $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $PDOInsertFile = $objBdd->prepare('INSERT INTO `file` ( `image` ) VALUES ( :image )');
+            $PDOInsertFile = $objBdd->prepare('INSERT INTO `file` ( `image`, `idpost`, `idcompte` ) VALUES ( :image, :idpost, :idcompte )');
             $PDOInsertFile->bindParam(':image', $file, PDO::PARAM_STR);
+            $PDOInsertFile->bindParam(':idpost', $idpost, PDO::PARAM_STR);
+            $PDOInsertFile->bindParam(':idcompte', $idcompte, PDO::PARAM_STR);
             $PDOInsertFile->execute();
             
-            header("Location: ../index.php");
+            header("Location: ../../index.php");
 
         }else{
-            header("Location: ../index.php");
+            header("Location: ../../index.php");
         }
 
     }else{
-        header("Location: ../index.php");
+        header("Location: ../../index.php");
     }
 
 }catch(Exception $prmE){

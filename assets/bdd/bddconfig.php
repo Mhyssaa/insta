@@ -1,6 +1,6 @@
 <?php
 
-$bddserver = "localhost:3308";
+$bddserver = "localhost";
         $bddname = "evo";
         $bddlogin = "root";
         $bddpass = "";

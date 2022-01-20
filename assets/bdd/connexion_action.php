@@ -62,7 +62,6 @@ try{
     
     } else {
         header("Location: ../../index.php");
-        // header("Location: ../php/home.php");
     }
     
 
