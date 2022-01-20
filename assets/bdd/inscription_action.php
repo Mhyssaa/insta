@@ -42,8 +42,10 @@ if( $nom != "" && $prenom != "" && $email != ""  && $mdp != ""  && $pseudo != ""
             die('Erreur : ' . $prmE->getMessage());
         }
 
+    }else{
+        header("Location: ../../index.php?page=inscription" );
     }
 
 }else{
-    header("Location: ../inscription.php");
+    header("Location: ../index.php?page=inscription");
 }
