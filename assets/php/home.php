@@ -30,7 +30,7 @@
             <?php
 
                 require("assets/bdd/bddconfig.php");
-
+                
                 try {
 
                     $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);

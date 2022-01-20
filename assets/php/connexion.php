@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="css/connexion.css">
+    <link rel="stylesheet" href="assets/css/style_connexion.css">
 </head>
 
 <main>
@@ -7,22 +7,26 @@
     <form method="POST" action="assets/bdd/connexion_action.php">
 
         <h3>Connexion</h3>
-
-        <div class="content-form">
-            <label for="pseudo">Pseudo *</label>
-            <input type="text" name="pseudo" required>
+        <div class="container-connexion">
+        <div class="connexion">
+        
+            <input placeholder="Pseudo" type="text" name="pseudo" required>
+        </div>
+<hr>
+        <div class="connexion">
+            
+            <input placeholder="Mot de Passe" type="password" name="mdp" required>
+        </div>
+        <hr>
         </div>
 
-        <div class="content-form">
-            <label for="mdp">Mot de passe *</label>
-            <input type="password" name="mdp" required>
+        <div class="connexion1">
+            <input id="envoyer" type="submit">
         </div>
-
-
-        <div class="content-form">
-            <input type="submit">
+<div class="container-href">
+        <a href="index.php?page=inscription" class="redirection">S'inscire</a>
         </div>
-
     </form>
+    
 
 </main>

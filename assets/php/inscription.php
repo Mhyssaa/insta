@@ -12,7 +12,7 @@ if( $verif_co != 0){
 
 <head>
 
-    <link rel="stylesheet" href="css/inscription.css">
+    <link rel="stylesheet" href="assets/css/style_inscription.css">
 
 </head>
 
@@ -21,42 +21,45 @@ if( $verif_co != 0){
 
     <form method="POST" action="assets/bdd/inscription_action.php">
 
-        <h3>INSCRIPTION</h3>
-
-        <div class="content-form">
-            <label for="nom">Nom *</label>
-            <input type="text" name="nom" required>
+        <h3>Inscription</h3>
+<div class="container-connexion">
+        <div class="connexion">
+        
+            <input placeholder="Nom" type="text" name="nom" required>
         </div>
-
-        <div class="content-form">
-            <label for="prenom">Prenom *</label>
-            <input type="text" name="prenom" required>
+<hr>
+        <div class="connexion">
+            
+            <input placeholder="Prénom" type="text" name="prenom" required>
         </div>
-
-        <div class="content-form">
-            <label for="pseudo">Pseudo *</label>
-            <input type="text" name="pseudo" required>
+<hr>
+        <div class="connexion">
+            
+            <input placeholder="Pseudo" type="text" name="pseudo" required>
         </div>
-
-        <div class="content-form">
-            <label for="email">Email *</label>
-            <input type="email" name="email" required>
+<hr>
+        <div class="connexion">
+            
+            <input placeholder="Email" type="email" name="email" required>
         </div>
-
-        <div class="content-form">
-            <label for="mdp">Mot de passe *</label>
-            <input type="password" name="mdp" required>
+<hr>
+        <div class="connexion">
+            
+            <input placeholder="Mot De Passe" type="password" name="mdp" required>
         </div>
-
-        <div class="content-form">
-            <label for="mdp2">Confirmer mot de passe *</label>
-            <input type="password" name="mdp2" required>
+<hr>
+        <div class="connexion">
+            
+            <input placeholder="Confirmer le Mot de Passe" type="password" name="mdp2" required>
         </div>
-
-        <div class="content-form">
-            <input type="submit" value="ENVOYER">
+        <hr>
+</div>
+        <div class="connexion1">
+            <input id="envoyer" type="submit" value="ENVOYER">
         </div>
-
+        <div class="container-href">
+        <a href="index.php?page=connexion" class="redirection">Se Connecter</a>
+</div>
     </form>
 
 
