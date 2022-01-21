@@ -21,7 +21,7 @@
     <p>0 Abonnement</p>
 </div>
 
- <a class="post" href="assets/php/create_post.php"> >Créer un post</a>
+<a class="post" href="assets/php/create_post.php"> Créer un post</a>
 
 
 <div class="center">
@@ -49,3 +49,4 @@
 </div>
 
 <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+<script src="assets/js/script_heart.js"></script>
