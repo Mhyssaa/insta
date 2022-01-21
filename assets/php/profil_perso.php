@@ -1,5 +1,7 @@
 <head>
     <link rel="stylesheet" href="assets/css/style_profil.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    
 </head>
 
 
@@ -8,7 +10,7 @@
         <span class="iconify" data-icon="carbon:user-avatar-filled"></span>
     </div>
     <div class="info-profil">
-        <p>@Pseudo 
+        <p>@<?php echo  $_SESSION["logged_in"]["pseudo"]; ?>
             <br>
         <span class="description">description </span> 
         </p>
@@ -36,19 +38,33 @@
         die("ERREUR : " . $prmE->getMessage());
     }
 ?>
-<section class="center">
+<section id="section2">
     <?php
     while ($messageSimple = $recup->fetch()) {
     ?>
-        <div>
-            <div class="card">
-                <img src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" class="image_post" alt="image" >
-            </div>
-            <div>
-                <span class="iconify" data-icon="dashicons:heart" style="color: #c276b7;" data-width="50"></span>
-                <span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="50"></span>
-            </div>
-        </div>
+        <div class="content_post">
+                    
+                    <div>
+                        <!-- Générer pseudo -->
+                        <h2 id="post_pseudo">@<?php echo stripslashes($messageSimple["pseudo"]); ?></h2>
+
+                    </div>
+
+                    <div>
+                        <!-- Générer image -->
+                        <img id="post_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
+
+                    </div>
+
+                    <div id="like_com">
+
+                        <div class="heart"></div>
+
+                        <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span></div>
+
+                    </div>
+
+                </div>
         <?php
     }
     ?>
@@ -56,3 +72,4 @@
 
 
 <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+<script src="assets/js/script_heart.js"></script>
