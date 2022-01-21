@@ -59,7 +59,7 @@ try{
             $PDOinsertFile->execute();
            
             
-            header("Location: ../index.php");
+            header('Location: ../../index.php');
 
         
 
@@ -67,8 +67,8 @@ try{
     }
 
        
-    header('Location: ../index.php');
-
+    header("Location: ../php/profil_perso.php");
+    
 }catch( Exception $prmE){
 
     die("ERREUR : " . $prmE->getMessage());
