@@ -25,6 +25,8 @@ try{
     
         // on initialise une variable avec les données de utilisateur
         $row_userweb = $PDOlistlogins->fetch();
+
+        echo $row_userweb["mdp"];
     
         if ($row_userweb != false) {
     

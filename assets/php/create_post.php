@@ -12,10 +12,11 @@
         <span class="image-preview__default-text">Image Preview</span>
     </div>
 
-        <input type="file" name="inpFile" class="inpFile" id="inpFile" />
-
-        <form method="POST" action="bdd/post_insert_action.php">
-
+    <form method="POST" action="assets/bdd/post_insert_action.php" enctype="multipart/form-data">
+        
+        
+        <input type="file" name="file" class="inpFile" id="inpFile" />
+            
             <textarea name="legende" id="legende" placeholder="Écrivez une légende"></textarea>     <br> <br>
 
             <input type="submit" value="Envoyer" class="envoyer">   <br> <br>

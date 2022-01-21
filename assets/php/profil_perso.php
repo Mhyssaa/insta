@@ -21,7 +21,7 @@
     <p>0 Abonnement</p>
 </div>
 
-<p class="post">Créer un post</p>
+ <a class="post" href="assets/php/create_post.php"> >Créer un post</a>
 
 
 <div class="center">
