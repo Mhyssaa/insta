@@ -82,7 +82,7 @@
                                     <!-- Bouton pour modifier le post -->
                                     <div id="btngear">
 
-                                        <a href="assets/php/update_post_form.php?id=<?php echo $messageSimple["idpost"] ?>"><span class="iconify" data-icon="bi:gear" style="color: #2b2238;" data-width="25"></span></a>
+                                        <a href="index.php?page=update_post_form&id=<?php echo $messageSimple["idpost"] ?>"><span class="iconify" data-icon="bi:gear" style="color: #2b2238;" data-width="25"></span></a>
                                         
                                     </div>
 
