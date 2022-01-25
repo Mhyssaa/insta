@@ -4,15 +4,17 @@
 session_start(); 
 
 
-if( isset($_SESSION["logged_in"])){
+if( isset($_SESSION["logged_in"]["iduser"])){
     
-    $verif_co = $_SESSION["logged_in"]["id"];
+    $verif_co = $_SESSION["logged_in"]["iduser"];
 
 }else{
 
     $verif_co = 0;
 
 }
+
+// echo  $_SESSION["logged_in"]["pseudo"];
 
 ?>
 

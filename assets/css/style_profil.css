@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Radley&display=swap");
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Radley", serif;
+}
+
 .card {
     display: flex;
     flex-direction: column;
@@ -11,6 +18,7 @@
     height: 400px;
     border-radius: 10px;
 }
+
 .iconify {
     margin-right: 20px;
 }

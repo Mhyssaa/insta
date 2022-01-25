@@ -1,11 +1,11 @@
+/*Police d'écriture*/
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Radley&display=swap");
+
 html, body {
     padding: 0%;
     margin: 0%;
     scroll-behavior: smooth;
 }
-
-/*Police d'écriture*/
-@import url('https://fonts.googleapis.com/css2?family=Radley&display=swap');
 
 footer {
     display: flex;
