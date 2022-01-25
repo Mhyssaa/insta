@@ -17,6 +17,7 @@ html, body {
 /*logo*/
 
 #logoheader{ 
+    margin-top: 20px;
     width: 30vw;
     height: auto;
 }
@@ -31,6 +32,12 @@ html, body {
 }
 
 /*menu hamburger*/
+    /*logo*/
+
+#btnnavbar{
+    border: 6px solid rgba(143, 36, 158, 1) ;
+    border-radius: 23px;
+}
 
 
 

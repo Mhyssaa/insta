@@ -18,37 +18,31 @@
     </section>
     
 
-    <!--menu burger-->
+    <!--menu hamburger-->
+
+            <!--logo-->
 
     <div class="content">
 
-        <div id="btn">
+        <div id="btnnavbar">
         <span class="iconify" data-icon="carbon:user-avatar-filled" style="color: #c276b7;" data-width="104" data-height="103"></span>
         </div>
 
     </div>
 
-            <!-- Liens menu hamburger -->
+            <!--liens menu hamburger-->
 
-     <div id="nav">
+     <div id="liensnav">
 
-        <li><a href="#" class="link">Lien</a></li>
-        <li><a href="#" class="link">Lien</a></li>
-        <li><a href="#" class="link">Lien</a></li>
-        <li><a href="#" class="link">Lien</a></li>
-        <li><a href="#" class="link">Lien</a></li>
+        <li><a href="index.php?page=connexion" class="linky">Connexion</a></li>
+        <li><a href="index.php?page=deconnexion" class="linky">Deconnexion</a></li>
+        <li><a href="index.php?page=inscription" class="linky">Inscription</a></li>
+        <li><a href="index.php?page=home" class="linky">Home</a></li>
+        <li><a href="index.php?page=create_post" class="linky">Créer post</a></li>
+        <li><a href="index.php?page=profil_perso" class="linky">Profil perso</a></li>
+        <li><a href="index.php?page=mentions" class="linky">Mentions légales</a></li>
 
     </div>
-
-     <!-- liens menu burger <div>
-        <a href="index.php?page=connexion">Connexion</a>
-        <a href="index.php?page=deconnexion">Deconnexion</a>
-        <a href="index.php?page=inscription">Inscription</a>
-        <a href="index.php?page=home">Home</a>
-        <a href="index.php?page=create_post">Créer post</a>
-        <a href="index.php?page=profil_perso">Profil perso</a>
-        <a href="index.php?page=mentions">Mentions légales</a>
-    </div>-->
 
     </section>
 
@@ -56,6 +50,7 @@
 
     </header>
 
+    
     <script src="assets/js/menuhamburger.js"></script>
     <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
 
