@@ -1,0 +1,43 @@
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+#header{
+    margin-left: 3rem;
+    margin-right: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*logo*/
+
+#logoheader{ 
+    width: 30vw;
+    height: auto;
+}
+
+/*barre de recherche*/
+
+#barrederecherche{
+    background-color: #bc5dca;
+    width: 20%;
+    height: 10vh;
+    text-align: center;
+}
+
+/*menu hamburger*/
+
+
+
+/**/
+
+#barre_rose {
+    width: 100%;
+    height: 1px;
+    background-color: #8F249E;
+}
