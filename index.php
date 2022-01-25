@@ -14,7 +14,7 @@ if( isset($_SESSION["logged_in"]["iduser"])){
 
 }
 
-echo  $_SESSION["logged_in"]["pseudo"];
+// echo  $_SESSION["logged_in"]["pseudo"];
 
 ?>
 

@@ -10,7 +10,8 @@
 
         <section id="section1">
 
-            <h1 id="titre">Bonjour</h1>
+            <h1 id="titre">Bonjour <span id="co_pseudo"><?php echo  $_SESSION["logged_in"]["pseudo"]; ?></span></h1>
+
             <div id="barre"></div>
 
         </section>
@@ -59,29 +60,38 @@
 
                             <section id="section2p">
 
-                                <div id="pseudo_btnferme">
+                                <div class="content_fonctionnalites">
 
                                     <!-- Générer pseudo -->
                                     <div class="marge"><h2 id="post_pseudo">@<?php echo stripslashes($messageSimple["pseudo"]); ?></h2></div>
 
                                     <!-- Croix pour fermer popup -->
                                     <div class="btnferme">
+
                                         <span class="iconify " data-icon="ep:circle-close-filled" style="color: #c276b7;" data-width="30"></span>
+                                    
                                     </div>
 
                                 </div>
 
-                                <!-- Générer la légende -->
-                                <div class="marge" id="legende"><p><?php echo stripslashes($messageSimple["legende"]); ?></p></div>
+                                <div class="content_fonctionnalites"> 
+
+                                    <!-- Générer la légende -->
+                                    <div class="marge" id="legende"><p>"<?php echo stripslashes($messageSimple["legende"]); ?>"</p></div>
+
+                                    <!-- Bouton pour modifier le post -->
+                                    <div id="btngear">
+
+                                        <a href="assets/php/update_post_form.php?id=<?php echo $messageSimple["idpost"] ?>"><span class="iconify" data-icon="bi:gear" style="color: #2b2238;" data-width="25"></span></a>
+                                        
+                                    </div>
+
+                                </div>
 
                                 <div id="barre_rose2"></div>
 
-                                <div class="marge" id="like_com">
-
-                                    <!-- Animation coeur pour liker -->
-                                    <div class="heart heart2"></div>
-
-                                </div>
+                                <!-- Animation coeur pour liker -->
+                                <div class="marge heart" id="heart2"></div>
 
                                 <!-- COMMENTAIRES -->
                                 <!-- Ajouter un commentaire -->
@@ -108,32 +118,21 @@
 
                                 ?>
 
-
                                 <!-- Affichage des commentaires ici -->
-                                <div class="marge">Liste des commentaires
+                                <div class="marge">
 
                                 <?php
                                 
                                 while ($plop = $recup2->fetch()) {
                                 ?>
+                                                 
+                                        <p id="pseudo_com">@<?php echo stripslashes($plop["pseudo"]); ?>
+                                        <br>
+                                        <span id="com"><?php echo stripslashes($plop["commentaire"]); ?></span></p>
 
-                                    
-                                        <div class="pseudo_utilisateur">
-                                                    
-                                            <div><?php echo stripslashes($plop["pseudo"]); ?></div>
-
-                                        </div>
-
-                                        <div class="commentaire_utilisateur">
-                                                
-                                            <p><?php echo stripslashes($plop["commentaire"]); ?></p>
-                                                    
-                                        </div>
                                 <?php
                                 }
                                 ?>
-
-                                </div>
 
                                 <form method="POST" action="assets/bdd/commentaire_action.php"> 
 
@@ -143,7 +142,7 @@
                                     <input type="hidden" name="idpost" value="<?php echo $messageSimple["idpost"]?>">
                                     <input type="hidden" name="iduser" value="<?php echo $_SESSION["logged_in"]["iduser"]?>">
 
-                                    <input type="submit" value="Soumettre" id="envoyer">
+                                    <input type="submit" value="Soumettre" id="soumettre">
 
                                 </form>
 
@@ -151,9 +150,7 @@
 
                         </div>
 
-
                     <!-- PAGE HOME               -->
-
                     <div>
                         <!-- Générer image -->
                         <img id="post_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
@@ -183,5 +180,6 @@
     <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
     <script src="assets/js/script_heart.js"></script>
     <script src="assets/js/script_popup.js"></script>
+    <script src="assets/js/script_btn_gear.js"></script>
 </body>
 </html>
