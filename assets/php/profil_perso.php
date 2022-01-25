@@ -4,6 +4,10 @@
     
 </head>
 
+<?php 
+    $iduser = $_SESSION["logged_in"]["iduser"];
+?>
+
 
 <div class="profil">
     <div class="avatar">
@@ -23,7 +27,7 @@
     <p>0 Abonnement</p>
 </div>
 
-<p class="post">Créer un post</p>
+<a href="assets/php/create_post.php" class="post"> Créer un post</a>
 
 
 <?php
@@ -32,44 +36,49 @@
     try {
         $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
         $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $recup = $objBdd->query("SELECT * FROM `user`, `post`, `file` WHERE user.iduser = post.iduser AND post.idpost = file.idpost");
+        $recup = $objBdd->query("SELECT * FROM `user`, `post`, `file` WHERE user.iduser = post.iduser AND post.idpost = file.idpost AND user.iduser = $iduser");
         
     } catch (Exception $prmE) {
         die("ERREUR : " . $prmE->getMessage());
     }
 ?>
-<section id="section2">
-    <?php
-    while ($messageSimple = $recup->fetch()) {
-    ?>
-        <div class="content_post">
-                    
-                    <div>
-                        <!-- Générer pseudo -->
-                        <h2 id="post_pseudo">@<?php echo stripslashes($messageSimple["pseudo"]); ?></h2>
 
-                    </div>
 
-                    <div>
-                        <!-- Générer image -->
-                        <img id="post_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
-
-                    </div>
-
-                    <div id="like_com">
-
-                        <div class="heart"></div>
-
-                        <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span></div>
-
-                    </div>
-
-                </div>
+    <section id="section2">
         <?php
-    }
-    ?>
-</section>
+        while ($messageSimple = $recup->fetch()) {
+        ?>
+            <div class="content_post">
+                        
+                        <div>
+                            <!-- Générer pseudo -->
+                            <h2 id="post_pseudo">@<?php echo stripslashes($messageSimple["pseudo"]); ?></h2>
+
+                        </div>
+
+                        <div>
+                            <!-- Générer image -->
+                            <img id="post_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
+
+                        </div>
+
+                        <div id="like_com">
+
+                            <div class="heart"></div>
+
+                            <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span></div>
+
+                        </div>
+
+                    </div>
+            <?php
+        }
+        ?>
+    </section>
+
 
 
 <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 <script src="assets/js/script_heart.js"></script>
+
+

@@ -10,7 +10,7 @@ html, body {
     flex-direction: column;
     width: 300px;
     align-items: center;
-    margin: 20px;
+    margin: auto;
 }
 
 .image_post {
@@ -25,16 +25,17 @@ html, body {
 
 .center {
     display: flex;
-    justify-content: center;
     width: 80%;
-    flex-wrap: wrap;
     margin: auto;
+    flex-wrap: wrap;
 }
 
 .post {
     text-align: center;
     font-size: 30px;
     margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 .profil {
@@ -43,6 +44,7 @@ html, body {
     align-items: center;
     font-size: 50px;
     flex-wrap: wrap;
+
 }
 
 .avatar {

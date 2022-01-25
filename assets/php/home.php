@@ -15,6 +15,18 @@
 
         </section>
 
+        <form id="form" action="assets/bdd/upload_action.php" method="POST" enctype="multipart/form-data">
+
+            <div>
+                Ajouter une image
+            </div>
+            
+            <input id="input_file" type="file" name="file" accept=".jpg, .jpeg, .png, .gif">
+
+            <button type="submit">Enregistrer</button> 
+
+        </form>
+
             <?php
 
                 require("assets/bdd/bddconfig.php");
@@ -25,7 +37,7 @@
 
                     $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    $recup = $objBdd->query("SELECT * FROM `user`, `post`, `file` WHERE user.iduser = post.iduser AND post.idpost = file.idpost ORDER BY DATE DESC");
+                    $recup = $objBdd->query("SELECT * FROM `user`, `post`, `file` WHERE user.iduser = post.iduser AND post.idpost = file.idpost");
                     
                 } catch (Exception $prmE) {
 
