@@ -28,6 +28,18 @@
 
     </div>
 
+            <!-- Liens menu hamburger -->
+
+     <div id="nav">
+
+        <li><a href="#" class="link">Lien</a></li>
+        <li><a href="#" class="link">Lien</a></li>
+        <li><a href="#" class="link">Lien</a></li>
+        <li><a href="#" class="link">Lien</a></li>
+        <li><a href="#" class="link">Lien</a></li>
+
+    </div>
+
      <!-- liens menu burger <div>
         <a href="index.php?page=connexion">Connexion</a>
         <a href="index.php?page=inscription">Inscription</a>
