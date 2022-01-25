@@ -43,116 +43,157 @@
 
             ?>
 
-                <div class="content_post">
-                    
-                    <div>
+                <div class="content_post" >
                         
-                        <!-- Générer pseudo + Lien de la popup pour qu'elle apparaisse -->
-                        <div id="histoire" data-modal="<?php echo $messageSimple["idpost"] ?>" class="btn"><h2 id="post_pseudo">@<?php echo stripslashes($messageSimple["pseudo"]); ?></h2></div>
+                    <!-- Page popup -->
+                    <div id="<?php echo $messageSimple["idpost"] ?>" class="popup">
 
-                    </div>
+                        <section  id="section1p">
+    
+                            <div>
+                                <!-- Générer l'image de la popup-->
+                                <img class="popup_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
+                            
+                            </div>
+    
+                        </section>
 
-                        <!-- Page popup -->
-                        <div id="<?php echo $messageSimple["idpost"] ?>" class="popup">
+                        <section id="section2p">
 
-                            <!-- Générer l'image -->
-                            <section id="section1p"><img id="popup_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" ></section>
+                            <div class="content_fonctionnalites">
 
-                            <section id="section2p">
-
-                                <div class="content_fonctionnalites">
-
-                                    <!-- Générer pseudo -->
-                                    <div class="marge"><h2 id="post_pseudo">@<?php echo stripslashes($messageSimple["pseudo"]); ?></h2></div>
-
-                                    <!-- Croix pour fermer popup -->
-                                    <div class="btnferme">
-
-                                        <span class="iconify " data-icon="ep:circle-close-filled" style="color: #c276b7;" data-width="30"></span>
+                                <!-- Générer pseudo de la popup-->
+                                <div class="marge">
                                     
-                                    </div>
-
+                                    <h2 id="post_pseudo">@<?php echo stripslashes($messageSimple["pseudo"]); ?></h2>
+                                
                                 </div>
 
-                                <div class="content_fonctionnalites"> 
+                                <!-- Croix pour fermer la popup -->
+                                <div class="btnferme">
 
-                                    <!-- Générer la légende -->
-                                    <div class="marge" id="legende"><p>"<?php echo stripslashes($messageSimple["legende"]); ?>"</p></div>
+                                    <span class="iconify " data-icon="ep:circle-close-filled" style="color: #c276b7;" data-width="30"></span>
+                                    
+                                </div>
 
-                                    <!-- Bouton pour modifier le post -->
+                            </div>
+
+                            <div class="content_fonctionnalites"> 
+
+                                <!-- Générer la légende de la popup -->
+                                <div class="marge" id="legende">
+
+                                    <p>"<?php echo stripslashes($messageSimple["legende"]); ?>"</p>
+                                    
+                                </div>
+
+                                <!-- Bouton pour rediriger vers modifier le post -->
+                                <?php
+                                    if($messageSimple["iduser"] == $verif_co){
+                                ?>
+
                                     <div id="btngear">
 
                                         <a href="index.php?page=update_post_form&id=<?php echo $messageSimple["idpost"] ?>"><span class="iconify" data-icon="bi:gear" style="color: #2b2238;" data-width="25"></span></a>
                                         
                                     </div>
 
-                                </div>
-
-                                <div id="barre_rose2"></div>
-
-                                <!-- Animation coeur pour liker -->
-                                <div class="marge heart" id="heart2"></div>
-
-                                <!-- COMMENTAIRES -->
-                                <!-- Ajouter un commentaire -->
                                 <?php
-
-                                    require("assets/bdd/bddconfig.php");
-
-                                    try {
-
-                                        $idpost = $messageSimple["idpost"];
-
-                                        $objBdd2 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
-                                        $objBdd2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                        $recup2 = $objBdd2->prepare("SELECT * FROM  `post`, `commentaire` WHERE post.idpost = commentaire.idpost AND post.idpost = :idpost  ORDER BY commentaire.idcommentaire DESC ");
-                                        $recup2->bindParam(':idpost' , $idpost , PDO::PARAM_STR);
-                                        $recup2->execute();
-
-
-                                        
-                                    } catch (Exception $prmE) {
-
-                                        die("ERREUR : " . $prmE->getMessage());
-                                    }
-
+                                }
                                 ?>
 
-                                <!-- Affichage des commentaires ici -->
-                                <div class="marge">
+                            </div>
+
+                            <!-- Affichage de la date du post -->
+                            <div class="marge" id="date"> <?php echo $messageSimple["date"]; ?></div>
+
+                            <div id="barre_rose2"></div>
+
+                            <!-- Animation coeur pour liker -->
+                            <div class="marge heart" id="heart2"></div>
+
+                            <!-- Espace commentaires -->
+                            <?php
+
+                                require("assets/bdd/bddconfig.php");
+
+                                try {
+
+                                    $idpost = $messageSimple["idpost"];
+
+                                    $objBdd2 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
+                                    $objBdd2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    $recup2 = $objBdd2->prepare("SELECT * FROM  `post`, `commentaire` WHERE post.idpost = commentaire.idpost AND post.idpost = :idpost  ORDER BY commentaire.idcommentaire DESC ");
+                                    $recup2->bindParam(':idpost' , $idpost , PDO::PARAM_STR);
+                                    $recup2->execute();
+   
+                                } catch (Exception $prmE) {
+
+                                    die("ERREUR : " . $prmE->getMessage());
+                                }
+
+                            ?>
+
+                            <!-- Affichage des commentaires ici -->
+                            <div class="marge">
 
                                 <?php
-                                
+                                    
                                 while ($plop = $recup2->fetch()) {
                                 ?>
-                                                 
-                                        <p id="pseudo_com">@<?php echo stripslashes($plop["pseudo"]); ?>
-                                        <br>
-                                        <span id="com"><?php echo stripslashes($plop["commentaire"]); ?></span></p>
+                                                    
+                                    <p id="pseudo_com">@<?php echo stripslashes($plop["pseudo"]); ?>
+                                    <br>
+                                    <span id="com"><?php echo stripslashes($plop["commentaire"]); ?></span></p>
 
                                 <?php
                                 }
                                 ?>
 
-                                <form method="POST" action="assets/bdd/commentaire_action.php"> 
+                            </div>
 
-                                    <textarea maxlength="255" name="commentaire" class="marge textarea" id="arena" placeholder="Ajouter un commentaire" cols="100" rows="10" autofocus="" required=""></textarea>    
+                            <!-- Ajouter un commentaire -->
+                            <form method="POST" action="assets/bdd/commentaire_action.php"> 
+
+                                <textarea maxlength="255" name="commentaire" class="marge textarea" id="arena" placeholder="Ajouter un commentaire" cols="100" rows="10" autofocus="" required=""></textarea>    
                                         
-                                    <input type="hidden" name="pseudo" value="<?php echo $_SESSION["logged_in"]["pseudo"]?>">
-                                    <input type="hidden" name="idpost" value="<?php echo $messageSimple["idpost"]?>">
-                                    <input type="hidden" name="iduser" value="<?php echo $_SESSION["logged_in"]["iduser"]?>">
+                                <input type="hidden" name="pseudo" value="<?php echo $_SESSION["logged_in"]["pseudo"]?>">
+                                <input type="hidden" name="idpost" value="<?php echo $messageSimple["idpost"]?>">
+                                <input type="hidden" name="iduser" value="<?php echo $_SESSION["logged_in"]["iduser"]?>">
 
-                                    <input type="submit" value="Soumettre" id="soumettre">
+                                <input type="submit" value="Soumettre" id="soumettre">
 
-                                </form>
+                            </form>
 
-                            </section>
+                        </section>
 
-                        </div>
+                    </div>
 
-                    <!-- PAGE HOME               -->
-                    <div>
-                        <!-- Générer image -->
+                    <!-- PAGE HOME -->
+                    <!-- Générer pseudo et si on clique dessus redirige vers profil-->
+                    <?php
+                        if($messageSimple["iduser"] == $verif_co){
+                    ?>
+
+                        <a href="index.php?page=profil_perso&id=<?php echo $messageSimple["idpost"] ?>">
+                            <h2 id="post_pseudo">@<?php echo stripslashes($messageSimple["pseudo"]); ?></h2>
+                        </a>
+
+                    <?php
+                        }else{
+                    ?>
+
+                        <a href="index.php?page=other_profile&id=<?php echo $messageSimple["idpost"] ?>">
+                            <h2 id="post_pseudo">@<?php echo stripslashes($messageSimple["pseudo"]); ?></h2>
+                        </a>
+                                        
+                    <?php
+                        }
+                    ?>               
+
+                    <!-- Générer image + lien de la popup pour qu'elle apparaisse -->
+                    <div class="btn" data-modal="<?php echo $messageSimple["idpost"] ?>">
+
                         <img id="post_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
 
                     </div>
@@ -163,8 +204,12 @@
                         <div class="heart"></div>
 
                         <!-- Ajouter un commentaire -->
-                        <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span></div>
+                        <div class="btn" data-modal="<?php echo $messageSimple["idpost"] ?>">
 
+                            <span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span>
+                            
+                        </div>
+                        
                     </div>
 
                 </div>
@@ -180,6 +225,5 @@
     <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
     <script src="assets/js/script_heart.js"></script>
     <script src="assets/js/script_popup.js"></script>
-    <script src="assets/js/script_btn_gear.js"></script>
 </body>
 </html>

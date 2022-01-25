@@ -8,6 +8,7 @@
 
     <div>
         <a href="index.php?page=connexion">Connexion</a>
+        <a href="index.php?page=deconnexion">Deconnexion</a>
         <a href="index.php?page=inscription">Inscription</a>
         <a href="index.php?page=home">Home</a>
         <a href="index.php?page=create_post">Créer post</a>
