@@ -1,0 +1,21 @@
+/* Smartphone tablette*/
+@media (max-width : 1024px) {
+
+#logoheader{
+   width: 25vw;
+}
+
+#barrederecherche{
+    display: none;
+}
+
+#btnnavbar{
+    width: 4vw;
+    height: 3vh;
+    border-radius: 20px;
+}
+
+.iconify{
+    width: 3vw;
+}
+}

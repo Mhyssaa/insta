@@ -1,5 +1,9 @@
 <head>
    <link rel="stylesheet" href="assets/css/header.css">
+   <link rel="stylesheet" href="assets/css/header_media.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,7 +18,7 @@
     <!--barre de recherche-->
 
     <section id="barrederecherche">
-        <div><a href="#">Rechercher</a></div>
+        <div><a id="rech" href="#">Rechercher</a></div>
     </section>
     
 
@@ -32,15 +36,15 @@
 
             <!--liens menu hamburger-->
 
-     <div id="liensnav">
+    <div id="liensnav">
 
-        <li><a href="index.php?page=connexion" class="linky">Connexion</a></li>
-        <li><a href="index.php?page=deconnexion" class="linky">Deconnexion</a></li>
-        <li><a href="index.php?page=inscription" class="linky">Inscription</a></li>
-        <li><a href="index.php?page=home" class="linky">Home</a></li>
-        <li><a href="index.php?page=create_post" class="linky">Créer post</a></li>
-        <li><a href="index.php?page=profil_perso" class="linky">Profil perso</a></li>
-        <li><a href="index.php?page=mentions" class="linky">Mentions légales</a></li>
+        <a href="index.php?page=connexion" class="linky">Connexion</a>
+        <a href="index.php?page=deconnexion" class="linky">Deconnexion</a>
+        <a href="index.php?page=inscription" class="linky">Inscription</a>
+        <a href="index.php?page=home" class="linky">Home</a>
+        <a href="index.php?page=create_post" class="linky">Créer post</a>
+        <a href="index.php?page=profil_perso" class="linky">Profil perso</a>
+        <a href="index.php?page=mentions" class="linky">Mentions légales</a>
 
     </div>
 
