@@ -117,9 +117,14 @@ main {
                     opacity: 50%;
                 }
 
-                    .btnferme:hover, #btngear:hover {
-                        cursor: pointer;
-                    }
+                #heart2 {
+                    left: -20%;
+                    top: 50%;
+                }
+
+                .btnferme:hover, #btngear:hover {
+                    cursor: pointer;
+                }
 
         #article2 {
             display: flex;
@@ -132,11 +137,6 @@ main {
                 background-color: #8F249E;
                 margin-top: 1rem;
                 margin-bottom: 1rem;
-            }
-
-            #heart2 {
-                left: 4%;
-                top: 7%;
             }
 
 /* Commentaires */

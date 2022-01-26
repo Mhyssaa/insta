@@ -91,6 +91,9 @@
 
                                 </div>
 
+                                <!-- Animation coeur pour liker -->
+                                <div class="heart" id="heart2"></div>
+
                                 <div class="content_fonctionnalites"> 
 
                                     <!-- Croix pour fermer la popup -->
@@ -122,9 +125,6 @@
                             <article id="article2">
 
                                 <div id="barre_rose2"></div>
-
-                                <!-- Animation coeur pour liker -->
-                                <div class="heart" id="heart2"></div>
 
                                 <!-- Espace commentaires -->
                                 <?php

@@ -14,7 +14,7 @@
         Merci de lire avec attention les différentes modalités d’utilisation du présent site avant d’y parcourir ses pages. En vous connectant sur ce site, vous acceptez, sans réserves, les présentes modalités.
         </p>
 
-        <h2 class="">Conditions d’utilisation :</h2>
+        <h2 class="titre2">Conditions d’utilisation :</h2>
 
        
         <p class="paragraphe">
@@ -29,7 +29,7 @@
         Evo se réserve le droit d’accepter ou de refuser un hyperlien sans avoir à en justifier sa décision.
         </p class="paragraphe">
 
-        <h2>Services fournis :</h2>
+        <h2 class="titre2">Services fournis :</h2>
 
         <p class="paragraphe">
         L’ensemble des activités de Evo ainsi que ses informations sont présentées sur notre site.
@@ -37,7 +37,7 @@
         Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne. Par ailleurs, tous les informations indiquées sur le site sont données à titre indicatif, et sont susceptibles de changer ou d’évoluer sans préavis.
         </p>
 
-        <h2>Limitation contractuelles sur les données :</h2>
+        <h2 class="titre2">Limitation contractuelle sur les données :</h2>
 
         <p class="paragraphe">
         Les informations contenues sur ce site sont aussi précises que possible et le site remis à jour à différentes périodes de l’année, mais peut toutefois contenir des inexactitudes ou des omissions.
@@ -47,20 +47,20 @@
         Les liens hypertextes mis en place dans le cadre du présent site internet en direction d’autres ressources présentes sur le réseau Internet ne sauraient engager la responsabilité de Evo.
         </p>
 
-        <h2>Propriété intellectuelle :</h2>
+        <h2 class="titre2">Propriété intellectuelle :</h2>
 
         <p class="paragraphe">
         Tout le contenu du présent site, incluant, de façon non limitative, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété exclusive de la société à l’exception des marques, logos ou contenus appartenant à d’autres sociétés partenaires ou auteurs.
         Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l’accord exprès par écrit de Evo. Cette représentation ou reproduction, par quelque procédé que ce soit, constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle. Le non-respect de cette interdiction constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur. En outre, les propriétaires des Contenus copiés pourraient intenter une action en justice à votre encontre.
         </p>
 
-        <h2>Litiges :</h2>
+        <h2 class="titre2">Litiges :</h2>
 
         <p class="paragraphe">
         Les présentes conditions du site sont régies par les lois françaises et toute contestation ou litiges qui pourraient naître de l’interprétation ou de l’exécution de celles-ci seront de la compétence exclusive des tribunaux dont dépend le siège social de la société. La langue de référence, pour le règlement de contentieux éventuels, est le français.
         </p>
 
-        <h2>Données personnelles :</h2>
+        <h2 class="titre2">Données personnelles :</h2>
 
         <p class="paragraphe">
         De manière générale, vous n’êtes pas tenu de nous communiquer vos données personnelles lorsque vous visitez notre site Internet.
