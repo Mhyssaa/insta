@@ -1,9 +1,9 @@
-/* Smartphone tablette*/
-@media (max-width : 1024px) {
+/* Smartphone */
+@media (max-width : 900px) {
 
     .popup {
         width: 100%;
-        height: 800px;
+        height: 650px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -30,7 +30,7 @@
     
             .popup_img {
                 width: auto;
-                height: 350px;
+                height: 250px;
             }
  
         #section2p {
@@ -43,6 +43,13 @@
             margin: 5px;
         }
 
+        #article1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
             .content_fonctionnalites {
                 display: flex;
                 flex-direction: row-reverse;
@@ -52,18 +59,19 @@
                     display: none;
                 }
 
+                #heart2 {
+                    left: 56%;
+                    top: 20%;
+                }
+
                 .post_pseudo_popup, #date, #barre_rose2 {
                     display: none;
                 }
 
-                #heart2 {
-                    left: 53%;
-                }
-
 /* Commentaires */
 .textarea {
-    width: 280px;
-    height: 50px; 
+    width: 270px;
+    height: 30px; 
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -73,4 +81,49 @@
         height: 1rem;
     }
 
+/* Page home */
+#post_img {
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
 }
+
+}
+
+/* Tablette*/
+@media (min-width : 901px) and (max-width : 1290px) {
+
+    .popup {
+        width: 900px;
+        height: 500px;
+        top: 15%;
+        left: 14%;
+    }
+
+        #section1p {
+            width: 350px;
+            height: 500px;
+        }
+    
+            .popup_img {
+                width: 350px;
+                height: 500px;
+            }
+ 
+        #section2p {
+            width: 550px;
+            height: 500px;
+            margin: 10px;
+        }
+
+/* Commentaires */
+.textarea { 
+    height: 60px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+}
+
+
+
