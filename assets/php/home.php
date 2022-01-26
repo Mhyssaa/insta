@@ -1,6 +1,7 @@
 <head>
 
     <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/home_media.css">
 
 </head>
 
@@ -49,6 +50,13 @@
                     <div id="<?php echo $messageSimple["idpost"] ?>" class="popup">
 
                         <section  id="section1p">
+
+                            <!-- Générer la légende de la popup en responsive uniquement-->
+                            <div class="marge legende" id="legende2">
+
+                                <p>"<?php echo stripslashes($messageSimple["legende"]); ?>"</p>
+                                
+                            </div>
     
                             <div>
                                 <!-- Générer l'image de la popup-->
@@ -60,110 +68,119 @@
 
                         <section id="section2p">
 
-                            <div class="content_fonctionnalites">
+                            <article id="article1">
 
-                                <!-- Générer pseudo de la popup-->
-                                <div class="marge">
-                                    
-                                    <h2 id="post_pseudo">@<?php echo stripslashes($messageSimple["pseudo"]); ?></h2>
-                                
+                                <div class="content_fonctionnalites">
+
+                                        <!-- Générer pseudo de la popup-->
+                                        <div>
+                                                
+                                            <h2 id="post_pseudo" class="post_pseudo_popup">@<?php echo stripslashes($messageSimple["pseudo"]); ?></h2>
+                                            
+                                        </div>
+
+                                        <!-- Générer la légende de la popup -->
+                                        <div class="legende" id="legende1">
+
+                                            <p>"<?php echo stripslashes($messageSimple["legende"]); ?>"</p>
+                                                
+                                        </div>
+
+                                        <!-- Affichage de la date du post -->
+                                        <div id="date"> <?php echo $messageSimple["date"]; ?></div>
+
                                 </div>
 
-                                <!-- Croix pour fermer la popup -->
-                                <div class="btnferme">
+                                <div class="content_fonctionnalites"> 
 
-                                    <span class="iconify " data-icon="ep:circle-close-filled" style="color: #c276b7;" data-width="30"></span>
-                                    
-                                </div>
+                                    <!-- Croix pour fermer la popup -->
+                                    <div class="btnferme">
 
-                            </div>
-
-                            <div class="content_fonctionnalites"> 
-
-                                <!-- Générer la légende de la popup -->
-                                <div class="marge" id="legende">
-
-                                    <p>"<?php echo stripslashes($messageSimple["legende"]); ?>"</p>
-                                    
-                                </div>
-
-                                <!-- Bouton pour rediriger vers modifier le post -->
-                                <?php
-                                    if($messageSimple["iduser"] == $verif_co){
-                                ?>
-
-                                    <div id="btngear">
-
-                                        <a href="index.php?page=update_post_form&id=<?php echo $messageSimple["idpost"] ?>"><span class="iconify" data-icon="bi:gear" style="color: #2b2238;" data-width="25"></span></a>
-                                        
+                                        <span class="iconify " data-icon="ep:circle-close-filled" style="color: #c276b7;" data-width="30"></span>
+                                                
                                     </div>
 
-                                <?php
-                                }
-                                ?>
+                                    <!-- Bouton pour rediriger vers modifier le post -->
+                                    <?php
+                                        if($messageSimple["iduser"] == $verif_co){
+                                    ?>
 
-                            </div>
+                                        <div class="btngear">
 
-                            <!-- Affichage de la date du post -->
-                            <div class="marge" id="date"> <?php echo $messageSimple["date"]; ?></div>
-
-                            <div id="barre_rose2"></div>
-
-                            <!-- Animation coeur pour liker -->
-                            <div class="marge heart" id="heart2"></div>
-
-                            <!-- Espace commentaires -->
-                            <?php
-
-                                require("assets/bdd/bddconfig.php");
-
-                                try {
-
-                                    $idpost = $messageSimple["idpost"];
-
-                                    $objBdd2 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
-                                    $objBdd2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                    $recup2 = $objBdd2->prepare("SELECT * FROM  `post`, `commentaire` WHERE post.idpost = commentaire.idpost AND post.idpost = :idpost  ORDER BY commentaire.idcommentaire DESC ");
-                                    $recup2->bindParam(':idpost' , $idpost , PDO::PARAM_STR);
-                                    $recup2->execute();
-   
-                                } catch (Exception $prmE) {
-
-                                    die("ERREUR : " . $prmE->getMessage());
-                                }
-
-                            ?>
-
-                            <!-- Affichage des commentaires ici -->
-                            <div class="marge">
-
-                                <?php
-                                    
-                                while ($plop = $recup2->fetch()) {
-                                ?>
+                                            <a href="index.php?page=update_post_form&id=<?php echo $messageSimple["idpost"] ?>"><span class="iconify" data-icon="bi:gear" style="color: #2b2238;" data-width="30"></span></a>
                                                     
-                                    <p id="pseudo_com">@<?php echo stripslashes($plop["pseudo"]); ?>
-                                    <br>
-                                    <span id="com"><?php echo stripslashes($plop["commentaire"]); ?></span></p>
+                                        </div>
 
+                                    <?php
+                                    }
+                                    ?>
+
+                                </div>
+
+                            </article>
+
+                            <article id="article2">
+
+                                <div id="barre_rose2"></div>
+
+                                <!-- Animation coeur pour liker -->
+                                <div class="heart" id="heart2"></div>
+
+                                <!-- Espace commentaires -->
                                 <?php
-                                }
+
+                                    require("assets/bdd/bddconfig.php");
+
+                                    try {
+
+                                        $idpost = $messageSimple["idpost"];
+
+                                        $objBdd2 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
+                                        $objBdd2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                        $recup2 = $objBdd2->prepare("SELECT * FROM  `post`, `commentaire` WHERE post.idpost = commentaire.idpost AND post.idpost = :idpost  ORDER BY commentaire.idcommentaire DESC ");
+                                        $recup2->bindParam(':idpost' , $idpost , PDO::PARAM_STR);
+                                        $recup2->execute();
+        
+                                    } catch (Exception $prmE) {
+
+                                        die("ERREUR : " . $prmE->getMessage());
+                                    }
+
                                 ?>
 
-                            </div>
+                                <!-- Affichage des commentaires ici -->
+                                <div>
 
-                            <!-- Ajouter un commentaire -->
-                            <form method="POST" action="assets/bdd/commentaire_action.php"> 
+                                    <?php
+                                                
+                                    while ($plop = $recup2->fetch()) {
 
-                                <textarea maxlength="255" name="commentaire" class="marge textarea" id="arena" placeholder="Ajouter un commentaire" cols="100" rows="10" autofocus="" required=""></textarea>    
-                                        
-                                <input type="hidden" name="pseudo" value="<?php echo $_SESSION["logged_in"]["pseudo"]?>">
-                                <input type="hidden" name="idpost" value="<?php echo $messageSimple["idpost"]?>">
-                                <input type="hidden" name="iduser" value="<?php echo $_SESSION["logged_in"]["iduser"]?>">
+                                    ?>
+                                                                
+                                        <p id="pseudo_com">@<?php echo stripslashes($plop["pseudo"]); ?>
+                                        <br>
+                                        <span id="com"><?php echo stripslashes($plop["commentaire"]); ?></span></p>
 
-                                <input type="submit" value="Soumettre" id="soumettre">
+                                    <?php
+                                    }
+                                    ?>
 
-                            </form>
+                                </div>
+
+                                <!-- Ajouter un commentaire -->
+                                <form method="POST" action="assets/bdd/commentaire_action.php"> 
+
+                                    <textarea maxlength="255" name="commentaire" class="marge textarea" id="arena" placeholder="Ajouter un commentaire" cols="100" rows="10" autofocus="" required=""></textarea>    
+                                                    
+                                    <input type="hidden" name="pseudo" value="<?php echo $_SESSION["logged_in"]["pseudo"]?>">
+                                    <input type="hidden" name="idpost" value="<?php echo $messageSimple["idpost"]?>">
+                                    <input type="hidden" name="iduser" value="<?php echo $_SESSION["logged_in"]["iduser"]?>">
+
+                                    <input type="submit" value="Soumettre" id="soumettre">
+
+                                </form>
+
+                            </article>
 
                         </section>
 
