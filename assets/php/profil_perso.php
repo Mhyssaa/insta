@@ -11,7 +11,7 @@
     require("assets/bdd/bddconfig.php");
 
     try {
-        $iduser = $verif_co     ;
+        $iduser = $verif_co;
 
         $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
 
@@ -38,6 +38,9 @@
                 <br>
             <span class="description">description </span> 
             </p>
+            <div class="abonnés">
+                <a href="assets/php/follow_action.php?followedid=<?php echo $iduser ?>&" class="subscribe-button">S'abonner</a> 
+            </div>
         </div>
     </div>
 
@@ -89,9 +92,6 @@
         $recup3->bindParam(':publication', $publication, PDO::PARAM_STR);
         $recup3->execute();
         $verif3 = $recup3->fetch();
-
-        echo $verif3;
-
 
 
     } catch (Exception $prmE) {
