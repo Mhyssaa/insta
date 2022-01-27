@@ -24,7 +24,7 @@
 
     <!--menu hamburger-->
 
-            <!--logo-->
+            <!--icône-->
 
     <div class="content">
 
@@ -36,7 +36,7 @@
 
             <!--liens menu hamburger-->
 
-    <div id="liensnav">
+    <!--<div id="liensnav">
 
         <a href="index.php?page=connexion" class="linky">Connexion</a>
         <a href="index.php?page=deconnexion" class="linky">Deconnexion</a>
@@ -46,7 +46,7 @@
         <a href="index.php?page=profil_perso" class="linky">Profil perso</a>
         <a href="index.php?page=mentions" class="linky">Mentions légales</a>
 
-    </div>
+    </div>-->
 
     </section>
 
