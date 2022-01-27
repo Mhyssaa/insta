@@ -4,27 +4,182 @@
     
 </head>
 
-<?php 
-    $iduser = $_SESSION["logged_in"]["iduser"];
+                            <!-- PROFIL -->
+
+<?php
+
+    require("assets/bdd/bddconfig.php");
+
+    try {
+        $iduser = $verif_co     ;
+
+        $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
+
+        $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $recup = $objBdd->query("SELECT * FROM `user` WHERE user.iduser = $iduser ");
+        
+
+    } catch (Exception $prmE) {
+        die("ERREUR : " . $prmE->getMessage());
+    }
+
 ?>
 
-
-<div class="profil">
-    <div class="avatar">
-        <span class="iconify" data-icon="carbon:user-avatar-filled"></span>
+<?php
+    while ($message = $recup->fetch()) {
+    ?>
+    <div class="profil">
+        <div class="avatar">
+            <span class="iconify" data-icon="carbon:user-avatar-filled"></span>
+        </div>
+        <div class="info-profil">
+            <p>@<?php echo  $message["pseudo"]; ?>
+                <br>
+            <span class="description">description </span> 
+            </p>
+        </div>
     </div>
-    <div class="info-profil">
-        <p>@<?php echo  $_SESSION["logged_in"]["pseudo"]; ?>
-            <br>
-        <span class="description">description </span> 
-        </p>
-    </div>
-</div>
 
+    <?php
+}
+?>
+
+                                    <!-- ABONNEMENT -->
+
+<?php
+
+    // require("assets/bdd/bddconfig.php");
+
+    try {
+        $abonnement = $verif_co     ;
+
+        $objBdd2 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
+
+        $objBdd2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $recup2 = $objBdd2->prepare("SELECT * FROM `abonnement` WHERE idsuivie = :abonnement");
+        $recup2->bindParam(':abonnement', $abonnement, PDO::PARAM_STR);
+        $recup2->execute();
+
+        $verif2 = $recup->fetch();
+
+        echo $verif2;
+    } catch (Exception $prmE) {
+
+        die("ERREUR : " . $prmE->getMessage());
+    }
+
+?>
+
+                            <!-- PUBLICATION -->
+
+<?php
+
+    // require("assets/bdd/bddconfig.php");
+
+    try {
+        $publication = $verif_co;
+        // die($publication);
+
+        $objBdd3 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
+        $objBdd3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $recup3 = $objBdd3->prepare("SELECT * FROM `abonnement` WHERE idsuivie = :publication ");
+
+        $recup3->bindParam(':publication', $publication, PDO::PARAM_STR);
+        $recup3->execute();
+        $verif3 = $recup3->fetch();
+
+        echo $verif3;
+
+
+
+    } catch (Exception $prmE) {
+        die("ERREUR : " . $prmE->getMessage());
+    }
+
+?>
+
+                                <!-- ABONNE -->
+
+<?php
+
+    require("assets/bdd/bddconfig.php");
+
+    try {
+        $abonne = $verif_co;
+
+        $objBdd4 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
+
+        $objBdd4->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $recup4 = $objBdd4->prepare("SELECT * FROM `post` WHERE iduser = :abonne ");
+        $recup4->bindParam(':abonne', $abonne, PDO::PARAM_STR);
+        $recup4->execute();
+        $verif4 = $recup4->fetch();
+
+
+    } catch (Exception $prmE) {
+        die("ERREUR : " . $prmE->getMessage());
+    }
+
+?>
 <div class="info-compte">
-    <p>0 Publication</p>
-    <p>0 Abonnés</p>
-    <p>0 Abonnement</p>
+
+
+                                <!-- PUBLICATION -->
+    <?php 
+        if($verif4 == ""){
+            $publication = 0;
+    ?>
+            <p><?php echo $publication ?>Publication</p>
+    <?php
+        }else{
+            $publication = $recup4->rowCount();
+
+    ?>
+            <p><?php echo $publication ?>Publication</p>
+
+    <?php   
+        }
+    ?>
+
+                                <!-- ABONNE -->
+
+    <?php 
+        if($verif2 == ""){
+            $abonne = 0;
+    ?>
+            <p><?php echo $abonne ?>Abonné</p>
+
+    <?php
+        }else {
+            $abonne = $recup2->rowCount();
+    ?>
+            <p><?php echo $abonne ?>Abonné</p>
+    <?php   
+        }
+    ?>
+
+                                <!-- ABONNEMENT -->
+
+    <?php 
+        if($verif3 == ""){
+            $abonnement = 0;
+
+    ?>
+            <p><?php echo $abonnement ?>Abonnement</p>
+
+    <?php
+        }else {
+            $abonnement = $recup3->rowCount();
+
+    ?>
+            <p><?php echo $abonnement ?>Abonnement</p>
+
+    <?php   
+        }
+    ?>
 </div>
 
 <a href="assets/php/create_post.php" class="post"> Créer un post</a>
@@ -49,28 +204,21 @@
         while ($messageSimple = $recup->fetch()) {
         ?>
             <div class="content_post">
-                        
-                        <div>
-                            <!-- Générer pseudo -->
-                            <h2 id="post_pseudo">@<?php echo stripslashes($messageSimple["pseudo"]); ?></h2>
 
-                        </div>
+                <div>
+                    <!-- Générer image -->
+                    <img id="post_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
 
-                        <div>
-                            <!-- Générer image -->
-                            <img id="post_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
+                </div>
 
-                        </div>
+                <div id="like_com">
 
-                        <div id="like_com">
+                    <div class="heart"></div>
+                    <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span></div>
 
-                            <div class="heart"></div>
+                </div>
 
-                            <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span></div>
-
-                        </div>
-
-                    </div>
+            </div>
             <?php
         }
         ?>
