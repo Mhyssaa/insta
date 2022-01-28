@@ -37,9 +37,13 @@ html, body {
 }
 
 /*menu hamburger*/
+
+    /*navbar*/
+
+
     /*bordure*/
 
-#btnnavbar{
+.btnnavbar{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -61,7 +65,7 @@ html, body {
 
     /*liens nav*/
 
-#liensnav{
+.liensnav{
     width: 10%;
     height: auto;
     background-color: rgba(216, 216, 216, 1);

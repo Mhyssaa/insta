@@ -28,7 +28,7 @@
 
     <div class="content">
 
-        <div id="btnnavbar">
+        <div class="btnnavbar">
         <span class="iconify" data-icon="carbon:user-avatar-filled" style="color: #c276b7;" data-width="104" data-height="103"></span>
         </div>
 
@@ -36,9 +36,9 @@
 
             <!--liens menu hamburger-->
 
-    <!--<div id="liensnav">
+   <div class="liensnav">
 
-        <a href="index.php?page=connexion" class="linky">Connexion</a>
+        <a href="index.php?page=connexion" class="linky">Connexion</a> 
         <a href="index.php?page=deconnexion" class="linky">Deconnexion</a>
         <a href="index.php?page=inscription" class="linky">Inscription</a>
         <a href="index.php?page=home" class="linky">Home</a>
@@ -46,7 +46,7 @@
         <a href="index.php?page=profil_perso" class="linky">Profil perso</a>
         <a href="index.php?page=mentions" class="linky">Mentions légales</a>
 
-    </div>-->
+    </div>
 
     </section>
 
