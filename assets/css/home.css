@@ -20,7 +20,7 @@ main {
         align-items: center;
     }
 
-        #titre {
+        .bjr_pseudo {
             font-family: "Cherry Swash", cursive;
             font-size: 36px;
             background: linear-gradient(-100deg, #8F249E , #D1498D );

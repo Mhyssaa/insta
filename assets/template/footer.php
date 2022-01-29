@@ -1,12 +1,14 @@
 <head>
+
    <link rel="stylesheet" href="assets/css/footer.css">
+   
 </head>
 
 <body>
 
     <footer>
 
-        <div><a href="#header"><span class="iconify" id="fly" data-icon="la:fly" style="color: #2b2238;" data-width="50"></span></a></div>
+        <div><a href="#header" class="liens"><span class="iconify" id="fly" data-icon="la:fly" style="color: #2b2238;" data-width="50"></span></a></div>
 
         <div id="barre_rose"></div>
 
