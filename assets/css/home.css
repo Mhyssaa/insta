@@ -14,6 +14,12 @@ main {
     color: #2b2238;
 }
 
+/* icones iconify  */
+.ico {
+    width: 30px;
+    height: 30px;
+}
+
     #section1 {
         display: flex;
         flex-direction: column;
