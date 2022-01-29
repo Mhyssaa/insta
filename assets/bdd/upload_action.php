@@ -30,8 +30,8 @@ try{
             $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $PDOInsertFile = $objBdd->prepare('INSERT INTO `file` ( `image`, `idpost`, `idcompte` ) VALUES ( :image, :idpost, :idcompte )');
             $PDOInsertFile->bindParam(':image', $file, PDO::PARAM_STR);
-            $PDOInsertFile->bindParam(':idpost', $idpost, PDO::PARAM_STR);
-            $PDOInsertFile->bindParam(':idcompte', $idcompte, PDO::PARAM_STR);
+            $PDOInsertFile->bindParam(':idpost', $file, PDO::PARAM_STR);
+            $PDOInsertFile->bindParam(':idcompte', $file, PDO::PARAM_STR);
             $PDOInsertFile->execute();
             
             header("Location: ../../index.php");
