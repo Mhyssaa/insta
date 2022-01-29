@@ -1,7 +1,6 @@
 html, body {
     padding: 0;
     margin: 0;
-    font-family: 'Bungee', cursive;
 }
 
 #header{
@@ -12,6 +11,7 @@ html, body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    font-family: 'Bungee', cursive;
 }
 
 /*logo*/
@@ -36,14 +36,14 @@ html, body {
     font-family: none;
 }
 
-/*menu hamburger*/
+/*menu burger*/
 
     /*navbar*/
 
 
     /*bordure*/
 
-.btnnavbar{
+#btnnavbar{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -65,7 +65,7 @@ html, body {
 
     /*liens nav*/
 
-.liensnav{
+#liensnav{
     width: 10%;
     height: auto;
     background-color: rgba(216, 216, 216, 1);
@@ -85,7 +85,7 @@ html, body {
     color: rgba(143, 36, 158, 1);
 }
 
-a[href="index.php?page=mentions"]{
+a[href="index.php?page=profil_perso"]{
     border-bottom: none;   
 }
 

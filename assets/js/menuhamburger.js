@@ -1,5 +1,5 @@
-const liensnav = document.getElementById(".liensnav");
-const btnnavbar = document.getElementById(".btnnavbar");
+const liensnav = document.getElementById("liensnav");
+const btnnavbar = document.getElementById("btnnavbar");
 
 btnnavbar.addEventListener("click", affichageNav);
 
@@ -12,21 +12,17 @@ links.forEach(linky => {
 function affichageNav() {
     console.log(liensnav);
 
+    if(liensnav.style.visibility == "hidden"){
+        liensnav.style.visibility = "visible"
+        liensnav.style.opacity = "1"
+        liensnav.style.zIndex = "9998"
+    } else{
+        liensnav.style.visibility = "hidden"
+        liensnav.style.opacity = "0"
+        liensnav.style.zIndex = "-9998"
+    }
+
 }
 
-/*jQuery(function($){
+affichageNav()
 
-    $( '.btnnavbar' ).click(function(){
-        $('.liensnav').toggleClass('expand');
-    });
-
-    $(document).on("click", function(e){
-        if(
-            $(e.target).closest(".liensnav").length == 0 &&
-            $(".liensnav").hasClass("expand") &&
-            $(e.target).closest(".btnnavbar").length == 0
-        ){
-            $('.liensnav').toggleClass('expand');
-        }
-    });
-});*/

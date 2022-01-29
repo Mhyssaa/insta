@@ -17,34 +17,33 @@
 
     <!--barre de recherche-->
 
-    <section id="barrederecherche">
-        <div><a id="rech" href="#">Rechercher</a></div>
-    </section>
+    
     
 
-    <!--menu hamburger-->
+    <!--menu burger-->
 
             <!--icône-->
 
     <div class="content">
 
-        <div class="btnnavbar">
+        <div id="btnnavbar">
         <span class="iconify" data-icon="carbon:user-avatar-filled" style="color: #c276b7;" data-width="104" data-height="103"></span>
         </div>
 
     </div>
 
-            <!--liens menu hamburger-->
+            <!--liens menu burger-->
 
-   <div class="liensnav">
+   <div id="liensnav">
 
+        <a href="#" class="linky">Gestion d'utilisateur</a>
+        <a href="#" class="linky">Modifier mon profil</a>
         <a href="index.php?page=connexion" class="linky">Connexion</a> 
         <a href="index.php?page=deconnexion" class="linky">Deconnexion</a>
         <a href="index.php?page=inscription" class="linky">Inscription</a>
         <a href="index.php?page=home" class="linky">Home</a>
-        <a href="index.php?page=create_post" class="linky">Créer post</a>
-        <a href="index.php?page=profil_perso" class="linky">Profil perso</a>
-        <a href="index.php?page=mentions" class="linky">Mentions légales</a>
+        <a href="index.php?page=profil_perso" class="linky">Mon profil</a>
+        
 
     </div>
 
