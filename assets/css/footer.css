@@ -16,6 +16,8 @@ footer {
 }
 
     #fly {
+        width: 50px;
+        height: 50px;
         padding-top: 1rem;
         padding-bottom: 1rem;
         animation: fly  5s linear infinite ;

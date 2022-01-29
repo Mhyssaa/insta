@@ -13,19 +13,18 @@
 
             <?php
                 if( $verif_co != 0 ){
-                ?>
-                    <h1 class="bjr_pseudo">Bonjour <span id="co_pseudo"><?php echo  $_SESSION["logged_in"]["pseudo"]; ?></span></h1>
+            ?>
+                <h1 class="bjr_pseudo">Bonjour <span id="co_pseudo"><?php echo  $_SESSION["logged_in"]["pseudo"]; ?></span></h1>
                         
-                <?php 
-
+            <?php 
                 }else if( $verif_co == 0){
-                ?>
+            ?>
 
-                    <h1 class="bjr_pseudo"><?php echo "Bonjour " ; ?></h1>
+                <h1 class="bjr_pseudo"><?php echo "Bonjour " ; ?></h1>
 
-                <?php 
-                }
-                ?>  
+            <?php 
+            }
+            ?>  
 
             <div id="barre"></div>
 
@@ -113,7 +112,7 @@
                                     <!-- Croix pour fermer la popup -->
                                     <div class="btnferme">
 
-                                        <span class="iconify " data-icon="ep:circle-close-filled" style="color: #c276b7;" data-width="30"></span>
+                                        <span class="iconify ico" data-icon="ep:circle-close-filled" style="color: #c276b7;" data-width="30"></span>
                                                 
                                     </div>
 
@@ -124,7 +123,7 @@
 
                                         <div class="btngear">
 
-                                            <a href="index.php?page=update_post_form&id=<?php echo $messageSimple["idpost"] ?>"><span class="iconify" data-icon="bi:gear" style="color: #2b2238;" data-width="30"></span></a>
+                                            <a href="index.php?page=update_post_form&id=<?php echo $messageSimple["idpost"] ?>"><span class="iconify ico" data-icon="bi:gear" style="color: #2b2238;" data-width="30"></span></a>
                                                     
                                         </div>
 
@@ -182,17 +181,31 @@
                                 </div>
 
                                 <!-- Ajouter un commentaire -->
-                                <form method="POST" action="assets/bdd/commentaire_action.php"> 
+                                <!-- Tu dois être connecté pour pouvoir laisser un commentaire -->
+                                <?php
+                                    if( $verif_co != 0 ){
+                                ?>
 
-                                    <textarea maxlength="255" name="commentaire" class="marge textarea" id="arena" placeholder="Ajouter un commentaire" cols="100" rows="10" autofocus="" required=""></textarea>    
+                                    <form method="POST" action="assets/bdd/commentaire_action.php"> 
+
+                                        <textarea maxlength="255" name="commentaire" class="marge textarea" id="arena" placeholder="Ajouter un commentaire" cols="100" rows="10" autofocus="" required=""></textarea>    
                                                     
-                                    <input type="hidden" name="pseudo" value="<?php echo $_SESSION["logged_in"]["pseudo"]?>">
-                                    <input type="hidden" name="idpost" value="<?php echo $messageSimple["idpost"]?>">
-                                    <input type="hidden" name="iduser" value="<?php echo $_SESSION["logged_in"]["iduser"]?>">
+                                        <input type="hidden" name="pseudo" value="<?php echo $_SESSION["logged_in"]["pseudo"]?>">
+                                        <input type="hidden" name="idpost" value="<?php echo $messageSimple["idpost"]?>">
+                                        <input type="hidden" name="iduser" value="<?php echo $_SESSION["logged_in"]["iduser"]?>">
 
-                                    <input type="submit" value="Soumettre" id="soumettre">
+                                        <input type="submit" value="Soumettre" id="soumettre">
 
-                                </form>
+                                    </form>
+                        
+                                <!-- Sinon tu ne peux pas laisser de commentaire -->
+                                <?php 
+                                    }else if( $verif_co == 0){
+                                ?>
+
+                                <?php 
+                                    }
+                                ?>  
 
                             </article>
 
@@ -237,7 +250,7 @@
                         <!-- Ajouter un commentaire -->
                         <div class="btn" data-modal="<?php echo $messageSimple["idpost"] ?>">
 
-                            <span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span>
+                            <span class="iconify ico" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span>
                             
                         </div>
                         
