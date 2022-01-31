@@ -1,3 +1,6 @@
+
+
+
 <head>
     <link rel="stylesheet" href="assets/css/other_profile.css">
 </head>
