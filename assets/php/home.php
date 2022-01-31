@@ -162,7 +162,7 @@
                                 ?>
 
                                 <!-- Affichage des commentaires ici -->
-                                <div>
+                                <div class="affichage_com">
 
                                     <?php
                                                 
