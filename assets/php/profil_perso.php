@@ -39,7 +39,21 @@
             <span class="description">description </span> 
             </p>
             <div class="abonnés">
+                <?php 
+                
+                if( $iduser == $_SESSION['logged_in']['iduser'] ){
+
+                ?>
+
+                <a href="assets/php/follow_action.php?followedid=<?php echo $iduser ?>&" class="subscribe-button">Modifier Profil</a> 
+
+                <?php    
+                }else {
+                ?>
                 <a href="assets/php/follow_action.php?followedid=<?php echo $iduser ?>&" class="subscribe-button">S'abonner</a> 
+                <?php 
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -52,7 +66,6 @@
 
 <?php
 
-    // require("assets/bdd/bddconfig.php");
 
     try {
         $abonnement = $verif_co     ;
@@ -79,7 +92,6 @@
 
 <?php
 
-    // require("assets/bdd/bddconfig.php");
 
     try {
         $publication = $verif_co;
@@ -104,7 +116,6 @@
 
 <?php
 
-    require("assets/bdd/bddconfig.php");
 
     try {
         $abonne = $verif_co;
@@ -132,13 +143,13 @@
         if($verif4 == ""){
             $publication = 0;
     ?>
-            <p><?php echo $publication ?>Publication</p>
+            <p><?php echo $publication ?> Publication</p>
     <?php
         }else{
             $publication = $recup4->rowCount();
 
     ?>
-            <p><?php echo $publication ?>Publication</p>
+            <p><?php echo $publication ?> Publication</p>
 
     <?php   
         }
@@ -150,13 +161,13 @@
         if($verif2 == ""){
             $abonne = 0;
     ?>
-            <p><?php echo $abonne ?>Abonné</p>
+            <p><?php echo $abonne ?> Abonné</p>
 
     <?php
         }else {
             $abonne = $recup2->rowCount();
     ?>
-            <p><?php echo $abonne ?>Abonné</p>
+            <p><?php echo $abonne ?> Abonné</p>
     <?php   
         }
     ?>
@@ -168,14 +179,14 @@
             $abonnement = 0;
 
     ?>
-            <p><?php echo $abonnement ?>Abonnement</p>
+            <p><?php echo $abonnement ?> Abonnement</p>
 
     <?php
         }else {
             $abonnement = $recup3->rowCount();
 
     ?>
-            <p><?php echo $abonnement ?>Abonnement</p>
+            <p><?php echo $abonnement ?> Abonnement</p>
 
     <?php   
         }

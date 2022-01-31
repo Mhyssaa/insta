@@ -31,4 +31,4 @@ if( $getfollowedid != $_SESSION['logged_in']['iduser']) {
 
 }
 
-// header('Location : '.$_SERVER['HTTP_REFERER']);
+header("Location: ../../index.php");

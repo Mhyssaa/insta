@@ -14,19 +14,7 @@
             <div id="barre"></div>
 
         </section>
-
-        <form id="form" action="assets/bdd/upload_action.php" method="POST" enctype="multipart/form-data">
-
-            <div>
-                Ajouter une image
-            </div>
-            
-            <input id="input_file" type="file" name="file" accept=".jpg, .jpeg, .png, .gif">
-
-            <button type="submit">Enregistrer</button> 
-
-        </form>
-
+        
             <?php
 
                 require("assets/bdd/bddconfig.php");
