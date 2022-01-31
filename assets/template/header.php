@@ -36,7 +36,7 @@
 
    <div id="liensnav">
 
-        <a href="#" class="linky">Gestion d'utilisateur</a>
+        <a href="index.php?page=gestion_utilisateur" class="linky">Gestion d'utilisateur</a>
         <a href="#" class="linky">Modifier mon profil</a>
         <a href="index.php?page=connexion" class="linky">Connexion</a> 
         <a href="index.php?page=deconnexion" class="linky">Deconnexion</a>
