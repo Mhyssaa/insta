@@ -4,13 +4,19 @@ let plop = 0;
 
 hearts.forEach(element => {
     
-    element.addEventListener("click", liker)
-
+    element.addEventListener("click", function(){
+        
+        document.forms["myform"].submit();
+        
+        element.addEventListener("click", setInterval(liker, 10000))
+        
+    })
+    
 });
 
 function liker() {
-
-if (plop == 0){
+    
+    if (plop == 0){
         
         this.style =
         `
@@ -18,14 +24,14 @@ if (plop == 0){
         background-position: -2800px 0;
         ` 
         plop++
-
+        
     }else{
-
+        
         this.style =
         `
         background-position: 0 0;
         ` 
         plop--
+        
     }
-
 }

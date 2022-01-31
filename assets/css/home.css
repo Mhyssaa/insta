@@ -73,6 +73,20 @@ main {
                     
                 }
                 
+                .like{
+                    width: 120px;
+                    height: 120px;
+                    position: relative; 
+                    left: 28%;
+                    top: 22%;
+                    transform: translate(-50%, -50%);
+                    background-image: url("../img/heart-2.png");
+                    background-repeat: no-repeat;
+                    background-position: -2800px 0;
+                    cursor: pointer;
+                
+                }
+                
                 @keyframes favori {
                     0% {
                     background-position: 0 0;
