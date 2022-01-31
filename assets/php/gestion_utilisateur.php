@@ -29,12 +29,13 @@ try {
 </head>
 <body>
 
-    <div class="gros_bloc">
+<div class="gros_bloc">
         <div class="header_gros_bloc">
             <div class="NOM"><p>Nom</p></div>
             <div class="EMAIL"><p>Email</p></div>
             <div class="OPTIONS"><p>Options</p></div>
         </div>
+
         <?php 
     while ($messageSimple = $recup-> fetch()) {
     ?>
@@ -46,21 +47,22 @@ try {
             <div class="type">
                 <div class="round" >
                     <input type="radio" id="admin" name="type" value="admin" />
-                    <label for="admin">Admin</label></div>
+                    <label for="admin">Admin</label>
+                </div>
                 <div class="round">
                     <input type="radio" id="user" name="type" value="user" checked />
                     <label for="user">User</label>
-</div>
-                <div><a onclick="return checkdelete()" href="assets/bdd/delete_user.php?id= <?php echo $messageSimple["iduser"] ?>"><img  src="assets/Img/bin.svg" alt="" class="bin" /></a></div>
-            </div>
-            
-            <div class="input-validate">
-     <input type="submit" value="Valider" class="valider" name="insert" required>   
-</div>
-
-
-        </form>
+                </div>
+                <div>
+                    <a onclick="return checkdelete()" href="assets/bdd/delete_user.php?id= <?php echo $messageSimple["iduser"] ?>"><img  src="assets/Img/bin.svg" alt="" class="bin" /></a>
+                </div>
+                <div class="input-validate">
+                    <input type="submit" value="Valider" class="valider" name="insert" required>
+                </div>
+            </form>
         </div>
+</div>
+ 
         <?php
                                 }
                                 ?>

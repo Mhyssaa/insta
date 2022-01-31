@@ -1,3 +1,32 @@
+<?php
+
+try{
+
+    require('assets/bdd/bddconfig.php');
+
+
+    $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8" , $bddlogin, $bddpass);
+    $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $PDOlistlogins = $objBdd->query("SELECT * FROM user");
+
+
+}catch(Exception $prme){
+
+    die("Erreur" . $prme->getMessage());
+}
+
+?>
+
+
+
+
+
+
+
+
+
+
 <head>
    <link rel="stylesheet" href="assets/css/header.css">
    <link rel="stylesheet" href="assets/css/header_media.css">
@@ -36,7 +65,17 @@
 
    <div id="liensnav">
 
-        <a href="index.php?page=gestion_utilisateur" class="linky">Gestion d'utilisateur</a>
+   <?php
+       if($type== "admin"){
+    ?>
+
+      <a href="index.php?page=gestion_utilisateur" class="linky">Gestion d'utilisateur</a>
+   <?php
+   }
+   ?>
+
+
+       
         <a href="#" class="linky">Modifier mon profil</a>
         <a href="index.php?page=connexion" class="linky">Connexion</a> 
         <a href="index.php?page=deconnexion" class="linky">Deconnexion</a>
