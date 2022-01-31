@@ -34,6 +34,8 @@ html, body {
     text-align: center;
     font-size: 30px;
     margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 .profil {
@@ -56,6 +58,24 @@ html, body {
 
     box-shadow: 0 0 0 13px #8F249E;
     border-radius: 10px;
+}
+
+.abonnements {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+  
+.subscribe-button {
+    background: #8f249e;
+    border-radius: 40px;
+    cursor: pointer;
+    width: 110px;
+    height: 40px;
+    border: #8f249e;
+    font-family: "Radley", serif;
+    color: white;
+    font-size: 15px;
 }
 
 .avatar .iconify {

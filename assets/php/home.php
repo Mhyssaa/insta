@@ -15,7 +15,7 @@
             <div id="barre"></div>
 
         </section>
-
+        
             <?php
 
                 require("assets/bdd/bddconfig.php");
