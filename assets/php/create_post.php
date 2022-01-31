@@ -17,7 +17,8 @@
         
         <input type="file" name="file" class="inpFile" id="inpFile"  required />
             
-            <textarea name="legende" id="legende" required placeholder="Écrivez une légende" maxlength="200"></textarea>     <br> <br>
+            <textarea name="legende" id="legende" required placeholder="Écrivez une légende" maxlength="200"></textarea>  <br> <br>
+            <div id="compteur" style="text-align:right"> 0 / 200</div>
 
             <input type="submit" value="Envoyer" class="envoyer" required>   <br> <br>
 

@@ -11,20 +11,6 @@
   padding-bottom: 50px;
 }
 
-#form {
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-}
-
-.header_gros_bloc,
-.users,
-.type {
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-}
-
 .NOM,
 .EMAIL {
   border-bottom: 1px solid #963e8f;
@@ -44,6 +30,20 @@
   margin: 20px;
 }
 
+.header_gros_bloc,
+.type {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+#form {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
 .pseudo,
 .pseudo_mail,
 .type {
@@ -51,15 +51,13 @@
   flex-wrap: wrap;
 }
 
+.pseudo {
+  font-weight: bold;
+}
+
 .bin {
   width: 1.2em;
   cursor: pointer;
-}
-
-.input-validate{
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 50px;
 }
 
 .valider {
@@ -71,7 +69,6 @@
   border: #8f249e;
   color: white;
   font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
-
-/* partie checkbox */
-

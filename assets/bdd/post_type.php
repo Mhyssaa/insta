@@ -1,41 +1,5 @@
-<?php
-
-// $iduser = htmlspecialchars ($_GET["id"]);
-
-
-
-// require("bddconfig.php");
-
-
-// try{
-
-// if(isset($_POST['insert'])) {
-                
-//                 $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);    
-
-//                 $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-//                 $type = $_POST['type'];
-                
-//                  $recup = $objBdd->query("UPDATE INTO `user` (`type`) VALUES (`$type`) WHERE `iduser` = $iduser");
-                      
-   
-//     header('Location: ../../index.php');
-// }
-
-// }catch( Exception $prme){
-
-//   die("ERREUR : " . $prme->getMessage());
-// }
-
-?>
-
-
-
-<!-- ***************************************************test******************************************************************************************************* -->
 
 <?php
-
 
 
 require("bddconfig.php");
@@ -54,7 +18,6 @@ if(isset($_POST['insert'])) {
     
     $recup->bindParam(':types' , $types , PDO::PARAM_STR);
 
-    // $recup->bindParam(':iduser' , $iduser , PDO::PARAM_STR);
    
     $recup->execute();
 
