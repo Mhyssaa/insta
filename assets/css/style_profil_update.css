@@ -4,40 +4,43 @@ html,body{
     padding: 0;
     font-family: "Radley", serif;
 }
-
 h3{
     font-family: 'Cherry Swash', cursive;
     color: #8F249E;
-    font-size: 30px;
+    font-size: 20px;
+    text-align: center;
 }
 form{
     text-align: center;
-    height: 450px;
+    height: auto;
     width: auto;
 }
-.container-connexion{
-    height: 250px;
-    width: 400px;
+
+.profil{
+    margin: 30px;
+}
+
+.profil input{
+    height: auto;
+    border: none;
+    font-size: 20px;
+    width: 30vh;
+    outline: none;
+}
+
+.container_profil{
+    height: 570px;
+    width: 500px;
     margin: auto;
     border-radius: 20px;
     border: solid 3px #8F249E ;
 }
-.connexion{
+.profil{
     margin: 30px;
 }
-
-.connexion input{
-    height: auto;
-    border: none;
-    font-size: 20px;
-    width: 20vh;
-}
-input:focus{
-    outline: none;
-}
 hr{
-    
     width: 50%;
+    height: auto;
     color: #8F249E;
 }
 #envoyer{
@@ -51,24 +54,16 @@ hr{
     font-size: 20px;
     color: white;
 }
-.container-href{
-    background-color: #8F249E;
-    border: #8F249E;
-    border-radius: 10px;
-    width: 20vh;
-    height: 40px;
-    margin: auto;
-    padding-top: 10px;
+.profil1{
+    text-align: center;
 }
 
-.redirection{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-}
 @media (max-width : 900px) {
-    .container-connexion{
+    .container_profil{
         width: 80%;
     }
+    .profil input{
+        width: 50%;
+        font-size: 15px;
+    }
 }
-

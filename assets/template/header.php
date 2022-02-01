@@ -23,10 +23,6 @@ try{
 
 
 
-
-
-
-
 <head>
    <link rel="stylesheet" href="assets/css/header.css">
    <link rel="stylesheet" href="assets/css/header_media.css">
@@ -46,8 +42,11 @@ try{
 
     <!--barre de recherche-->
 
+
     
     
+
+        <a href="index.php?page=recherche"><span class="iconify" data-icon="akar-icons:search" style="color: #8f249e;"></span></a>
 
     <!--menu burger-->
 
