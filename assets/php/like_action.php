@@ -18,7 +18,7 @@ try {
     die("ERREUR : " . $prmE->getMessage());
 }
 
-$getidpost = intval($_GET['idpost']);
+$getidpost = intval($_POST['idpost']);
 
 if( $getidpost != $_SESSION['logged_in']['iduser']) {
 
@@ -46,4 +46,4 @@ if( $getidpost != $_SESSION['logged_in']['iduser']) {
 
 }
 
-header("Location: ../../index.php");
+header("Location: ../../index.php?page=profil_perso");

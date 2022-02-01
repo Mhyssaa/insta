@@ -82,7 +82,7 @@ main {
                     transform: translate(-50%, -50%);
                     background-image: url("../img/heart-2.png");
                     background-repeat: no-repeat;
-                    background-position: -2800px 0;
+                    background-position: 0 0;
                     cursor: pointer;
                 
                 }
