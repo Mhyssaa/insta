@@ -1,3 +1,12 @@
+<?php
+
+if($_SESSION['type'] != "admin"){
+    header("location: index.php?page=connexion");
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
