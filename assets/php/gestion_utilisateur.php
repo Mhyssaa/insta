@@ -1,6 +1,6 @@
 <?php
 
-if($_SESSION['type'] != "admin"){
+if($type != "admin"){
     header("location: index.php?page=connexion");
 }
 ?>
