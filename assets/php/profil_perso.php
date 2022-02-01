@@ -78,36 +78,30 @@ try {
 // POST
 
 try {
-
-    $iduser = $verif_co;
-
     $objBdd5 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
     $objBdd5->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $recup5 = $objBdd5->prepare("SELECT * FROM `user`, `post`, `file` WHERE user.iduser = :iduser AND post.iduser = :iduser");
-    $recup5->bindParam(':iduser', $iduser, PDO::PARAM_STR);
-    $recup5->execute();
-
+    $recup5 = $objBdd->query("SELECT * FROM `user`, `post`, `file` WHERE user.iduser = post.iduser AND post.idpost = file.idpost AND user.iduser = $iduser");
+    
 } catch (Exception $prmE) {
     die("ERREUR : " . $prmE->getMessage());
 }
 
-// //LIKE
+//LIKE
 
-// try {
+try {
 
-//     $iduser = $verif_co;
+    $objBdd6 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
+    $objBdd6->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $recup6 = $objBdd6->prepare("SELECT * FROM `likes`, `user`, `post` WHERE user.iduser = post.iduser AND user.iduser = $iduser");
+    $recup6->bindParam(':iduser', $iduser, PDO::PARAM_STR);
+    $recup6->execute();
 
-//     $objBdd6 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
-//     $objBdd6->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//     $recup6 = $objBdd6->prepare("SELECT * FROM `like`, `user`, `post` WHERE user.iduser = post.iduser AND post.idpost = file.idpost AND user.iduser = $iduser");
-//     $recup6->bindParam(':iduser', $iduser, PDO::PARAM_STR);
-//     $recup6->execute();
+    
 
 
-// } catch (Exception $prmE) {
-//     die("ERREUR : " . $prmE->getMessage());
-// }
+} catch (Exception $prmE) {
+    die("ERREUR : " . $prmE->getMessage());
+}
 
 ?>
 
@@ -219,21 +213,7 @@ try {
 
             <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span></div>
 
-            <?php
-            if ($row == "") {
-                $likes = 0;
-
-            ?>
-                <p><?php echo $likes ?> like</p>
-
-            <?php
-            } else {
-                $likes = $row;
-            ?>
-                <p><?php echo $likes ?> like</p>
-            <?php
-            }
-            ?>
+                ?>
         </div>
     </div>
 <?php
