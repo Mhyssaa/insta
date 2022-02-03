@@ -2,7 +2,7 @@
 
 if( $verif_co != 0){
     
-  header("Location: index.php");
+  // header("Location: index.php");
     
 }
 
@@ -18,18 +18,20 @@ if( $verif_co != 0){
       <main id="main">
       <h1>Modifier mon Post</h1>
 
-        <form method="POST" action="update_post.php">
+        <form name="formulaire" method="POST" action="assets/php/update_post.php">
 
 
-            <textarea name="legende" id="legende" placeholder="Écrivez une légende" onKeyUp="textCounter()"></textarea> <br> <br>
-            <!-- <p><span id="counter">0</span> / 200</p> -->
-            <input type="submit" value="Envoyer" class="envoyer">
+            <textarea name="legende" id="legende" required placeholder="Écrivez une légende" onKeyUp="textCounter()" maxlength="200"></textarea> <br> <br>
+             <!-- <p><span id="counter">0</span> / 200</p> -->
+             <div id="compteur" style="text-align:right"> 0 / 200</div>
+            <input type="submit" value="Envoyer" class="envoyer" required>
+            <input type="hidden" name="idpost" value="<?php echo $_GET["id"]?>">
 
 
             
 
         </form>
-         <input type="submit" value="Supprimer" class="supprimer">
+         <!-- <input type="submit" value="Supprimer" class="supprimer"> -->
         </main>
 
         <script src="assets/js/text-counter.js"></script>

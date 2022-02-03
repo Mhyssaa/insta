@@ -17,23 +17,24 @@ require("bddconfig.php");
 
 try{
 
-   
-    $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
-   
-    $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    if(isset($_FILES['file']) && $messageLegend != "" && isset($iduser)){
 
+        $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
     
-    $PDOinsert = $objBdd->prepare("INSERT INTO `post` (`pseudo`, `legende`,`iduser`) VALUES (:pseudo , :messageLegend, :iduser)" );
-  
-    $PDOinsert->bindParam(':pseudo' , $pseudo , PDO::PARAM_STR);
-    $PDOinsert->bindParam(':messageLegend' , $messageLegend , PDO::PARAM_STR);
-    $PDOinsert->bindParam(':iduser' , $iduser , PDO::PARAM_STR);
-    
-    $PDOinsert->execute();
+        $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $idpost = $objBdd->lastInsertId();
+        
+        $PDOinsert = $objBdd->prepare("INSERT INTO `post` (`pseudo`, `legende`,`iduser`) VALUES (:pseudo , :messageLegend, :iduser)" );
+    
+        $PDOinsert->bindParam(':pseudo' , $pseudo , PDO::PARAM_STR);
+        $PDOinsert->bindParam(':messageLegend' , $messageLegend , PDO::PARAM_STR);
+        $PDOinsert->bindParam(':iduser' , $iduser , PDO::PARAM_STR);
+        
+        $PDOinsert->execute();
+
+        $idpost = $objBdd->lastInsertId();
      
-    if(isset($_FILES['file'])){
+    
 
         $tabExtension = explode('.', $name);
         $extension = strtolower(end($tabExtension));
@@ -59,16 +60,41 @@ try{
             $PDOinsertFile->execute();
            
             
-            header('Location: ../../index.php');
+            header("Location: ../../index.php");
 
         
 
         }
     }
 
-       
-    header("Location: ../php/profil_perso.php");
+     
+    //   if($messageLegend != ""  && $image!= "") {
     
+    //     require('../bdd/bddconfig.php');
+    
+  
+    //     $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
+     
+    //     $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    //     $PDOlistlogins = $objBdd->prepare("SELECT * FROM post, file WHERE messageLegend = :messageLegend");
+        
+    //     $PDOlistlogins->bindParam(':messageLegend', $messageLegend, PDO::PARAM_STR);
+       
+    //     $PDOlistlogins->execute();
+    
+        
+    //     $row_userweb = $PDOlistlogins->fetch();
+
+    //     echo $row_userweb["mdp"];
+    
+        
+    
+    // }
+
+       
+    header('Location: ../php/profil_perso.php');
+
 }catch( Exception $prmE){
 
     die("ERREUR : " . $prmE->getMessage());

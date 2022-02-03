@@ -8,13 +8,14 @@ if( isset($_SESSION["logged_in"]["iduser"])){
     
     $verif_co = $_SESSION["logged_in"]["iduser"];
 
+    $type = $_SESSION["logged_in"]["type"];
+
 }else{
 
     $verif_co = 0;
+    $type = "invite";
 
 }
-
-// echo  $_SESSION["logged_in"]["pseudo"];
 
 ?>
 

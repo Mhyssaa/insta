@@ -10,12 +10,12 @@
         <div class="container-connexion">
         <div class="connexion">
         
-            <input placeholder="Pseudo" type="text" name="pseudo" required>
+            <input placeholder="Pseudo*" type="text" name="pseudo" required>
         </div>
 <hr>
         <div class="connexion">
             
-            <input placeholder="Mot de Passe" type="password" name="mdp" required>
+            <input placeholder="Mot de Passe*" type="password" name="mdp" required>
         </div>
         <hr>
         </div>

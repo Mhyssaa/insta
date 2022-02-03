@@ -1,4 +1,4 @@
-function textCounter() {
-  let textarea = document.getElementById("legende").value;
-  console.log(textarea.length);
-}
+
+    document.getElementById('legende').addEventListener('keyup', function() {
+         document.getElementById('compteur').innerHTML = legende.value.length;
+     });

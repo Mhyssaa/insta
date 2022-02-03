@@ -15,11 +15,12 @@
     <form method="POST" action="assets/bdd/post_insert_action.php" enctype="multipart/form-data">
         
         
-        <input type="file" name="file" class="inpFile" id="inpFile" />
+        <input type="file" name="file" class="inpFile" id="inpFile"  required />
             
-            <textarea name="legende" id="legende" placeholder="Écrivez une légende"></textarea>     <br> <br>
+            <textarea name="legende" id="legende" required placeholder="Écrivez une légende" maxlength="200"></textarea>  <br> <br>
+            <div id="compteur" style="text-align:right"> 0 / 200</div>
 
-            <input type="submit" value="Envoyer" class="envoyer">   <br> <br>
+            <input type="submit" value="Envoyer" class="envoyer" required>   <br> <br>
 
         </form>
 
@@ -27,3 +28,4 @@
 </main>
 
 <script src="assets/js/img-input-file.js"></script>
+<script src="assets/js/text-counter.js"></script>
