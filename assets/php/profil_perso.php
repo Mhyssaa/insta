@@ -8,6 +8,8 @@
 
 <?php
 
+$stock = 0;
+
 require("assets/bdd/bddconfig.php");
 
 try {
@@ -80,28 +82,12 @@ try {
 try {
     $objBdd5 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
     $objBdd5->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $recup5 = $objBdd->query("SELECT * FROM `user`, `post`, `file` WHERE user.iduser = post.iduser AND post.idpost = file.idpost AND user.iduser = $iduser");
+    $recup5 = $objBdd5->query("SELECT * FROM `user`, `post`, `file` WHERE user.iduser = post.iduser AND post.idpost = file.idpost AND user.iduser = $iduser");
     
 } catch (Exception $prmE) {
     die("ERREUR : " . $prmE->getMessage());
 }
 
-//LIKE
-
-try {
-
-    $objBdd6 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
-    $objBdd6->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $recup6 = $objBdd6->prepare("SELECT * FROM `likes`, `user`, `post` WHERE user.iduser = post.iduser AND user.iduser = $iduser");
-    $recup6->bindParam(':iduser', $iduser, PDO::PARAM_STR);
-    $recup6->execute();
-
-    
-
-
-} catch (Exception $prmE) {
-    die("ERREUR : " . $prmE->getMessage());
-}
 
 ?>
 
@@ -201,19 +187,66 @@ try {
 
         </div>
         <div id="like_com">
-
+            
             <form id="myform" method="POST" action="assets/php/like_action.php">
-
+                
                 <input name="idpost" type="hidden" value="<?php echo $test["idpost"] ?>">
+                
+                <?php
+                
+                //LIKE
+                
+                try {
+                    $idpostlike = $test["idpost"];
 
-                <div class="heart"></div>
+                    // echo $idpostlike;
+                    
+                    $objBdd6 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
+                    $objBdd6->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $recup6 = $objBdd6->query("SELECT * FROM `likes` WHERE idpost = $idpostlike AND iduser = $verif_co LIMIT 1");
+                    // var_dump($recup6->fetch());
+                    if($recup6->fetch() == false){
+                        // var_dump($recup6->fetch());
+                        $recup6 = $objBdd6->query("SELECT * FROM `likes` WHERE idpost = $idpostlike");
+                    }
+
+                    // var_dump($recup6->fetch());
+                    
+                    $recup6->execute();
+                    
+                } catch (Exception $prmE) {
+                    die("ERREUR : " . $prmE->getMessage());
+                }
+                
+                // var_dump($recup6->fetch());
+
+                while ($likes = $recup6->fetch()) {
+
+                    echo $likes['iduser'];
+
+                    if( $likes['iduser'] == $verif_co){
+                
+                        echo '<div class="like"></div>';
+
+                    }else{
+
+                        echo '<div class="heart"></div>';
+
+                    }
+                    ?>
 
 
+
+                <?php    
+                }
+                ?>
+
+                
             </form>
-
+            
             <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span></div>
 
-                ?>
+            
         </div>
     </div>
 <?php

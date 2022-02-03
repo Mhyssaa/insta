@@ -38,3 +38,4 @@ function liker() {
     setInterval(function(){ document.forms["myform"].submit();}, 1100)
 
 }
+

@@ -20,30 +20,26 @@ try {
 
 $getidpost = intval($_POST['idpost']);
 
-if( $getidpost != $_SESSION['logged_in']['iduser']) {
+$dejalike = $objBdd->prepare('SELECT * FROM `likes` WHERE  iduser = :iduser AND idpost = :idpost');
 
+$dejalike->bindParam(':iduser', $_SESSION['logged_in']['iduser'], PDO::PARAM_STR);
+$dejalike->bindParam(':idpost', $getidpost, PDO::PARAM_STR);
+$dejalike->execute();
 
-    $dejalike = $objBdd->prepare('SELECT * FROM `likes` WHERE  iduser = :iduser AND idpost = :idpost');
-
-    $dejalike->bindParam(':iduser', $_SESSION['logged_in']['iduser'], PDO::PARAM_STR);
-    $dejalike->bindParam(':idpost', $getidpost, PDO::PARAM_STR);
-    $dejalike->execute();
-
-    $dejalike = $dejalike->rowCount();
+$dejalike = $dejalike->rowCount();
     
-    if($dejalike == 0){
+if($dejalike == 0){
 
-        $addlike = $objBdd->prepare('INSERT INTO `likes` (iduser, idpost) VALUES (?,?)');
-        $addlike->execute(array($_SESSION['logged_in']['iduser'],$getidpost));
+    $addlike = $objBdd->prepare('INSERT INTO `likes` (iduser, idpost) VALUES (?,?)');
+    $addlike->execute(array($_SESSION['logged_in']['iduser'],$getidpost));
 
-    }else if($dejalike == 1){
+}else if($dejalike == 1){
 
-        $deletelike = $objBdd->prepare('DELETE FROM `likes` WHERE  iduser = :iduser AND idpost = :idpost');
-        $deletelike->bindParam(':iduser', $_SESSION['logged_in']['iduser'], PDO::PARAM_STR);
-        $deletelike->bindParam(':idpost', $getidpost, PDO::PARAM_STR);
-        $deletelike->execute();
-        }
-
+    $deletelike = $objBdd->prepare('DELETE FROM `likes` WHERE  iduser = :iduser AND idpost = :idpost');
+    $deletelike->bindParam(':iduser', $_SESSION['logged_in']['iduser'], PDO::PARAM_STR);
+    $deletelike->bindParam(':idpost', $getidpost, PDO::PARAM_STR);
+    $deletelike->execute();
 }
+
 
 header("Location: ../../index.php?page=profil_perso");
