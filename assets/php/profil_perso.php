@@ -92,7 +92,6 @@
 
     try {
         $publication = $verif_co;
-        // die($publication);
 
         $objBdd3 = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
         $objBdd3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -190,7 +189,7 @@
     ?>
 </div>
 
-<a href="assets/php/create_post.php" class="post"> Créer un post</a>
+<a href="index.php?page=create_post" class="post"> Créer un post</a>
 
 
 <?php
