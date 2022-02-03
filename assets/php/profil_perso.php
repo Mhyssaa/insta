@@ -207,30 +207,30 @@
 ?>
 
 
-    <section id="section2">
-        <?php
-        while ($messageSimple = $recup->fetch()) {
-        ?>
-            <div class="content_post">
+<section id="section2">
+    <?php
+    while ($messageSimple = $recup->fetch()) {
+    ?>
+        <div class="content_post">
 
-                <div>
-                    <!-- Générer image -->
-                    <img id="post_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
-
-                </div>
-
-                <div id="like_com">
-
-                    <div class="heart"></div>
-                    <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span></div>
-
-                </div>
+            <div>
+                <!-- Générer image -->
+                <img id="post_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
 
             </div>
-            <?php
-        }
-        ?>
-    </section>
+
+            <div id="like_com">
+
+                <div class="heart"></div>
+                <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span></div>
+
+            </div>
+
+        </div>
+        <?php
+    }
+    ?>
+</section>
 
 
 
