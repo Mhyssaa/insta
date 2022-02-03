@@ -24,17 +24,7 @@ html, body {
 
 /*barre de recherche*/
 
-#barrederecherche{
-    background-color: #bc5dca;
-    width: 20%;
-    height: 10vh;
-    text-align: center;
-}
 
-#rech{
-    color: white;
-    font-family: none;
-}
 
 /*menu burger*/
 
@@ -66,7 +56,11 @@ html, body {
     /*liens nav*/
 
 #liensnav{
-    width: 10%;
+    position: relative;
+    left: -300px;
+    top: 120px;
+    border-radius: 10px;
+    width: 20%;
     height: auto;
     background-color: rgba(216, 216, 216, 1);
     display: flex;
@@ -79,6 +73,8 @@ html, body {
     font-weight: bold;
     text-decoration-line: none;
     border-bottom: 1px solid black;
+    height: 15px;
+    padding: 5px;
 }
 
 .linky:hover{

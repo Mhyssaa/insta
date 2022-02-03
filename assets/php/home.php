@@ -29,7 +29,7 @@
             <div id="barre"></div>
 
         </section>
-
+        
             <?php
 
                 require("assets/bdd/bddconfig.php");
@@ -162,7 +162,7 @@
                                 ?>
 
                                 <!-- Affichage des commentaires ici -->
-                                <div>
+                                <div class="affichage_com">
 
                                     <?php
                                                 

@@ -39,6 +39,7 @@ try{
                 $session_data = array(
                     'iduser' => $row_userweb['iduser'],
                     'pseudo' => $row_userweb['pseudo'],
+                    'type' => $row_userweb['type']
                 );
     
                 //régénérer le session id pour eviter d'avoir 2 user dans le $_SESSION

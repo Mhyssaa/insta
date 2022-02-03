@@ -1,21 +1,19 @@
 <?php 
 
-
 session_start(); 
-
 
 if( isset($_SESSION["logged_in"]["iduser"])){
     
     $verif_co = $_SESSION["logged_in"]["iduser"];
 
+    $type = $_SESSION["logged_in"]["type"];
+
 }else{
 
     $verif_co = 0;
+    $type = "invite";
 
 }
-
-// echo  $_SESSION["logged_in"]["pseudo"];
-
 ?>
 
 <!DOCTYPE html>
@@ -28,14 +26,9 @@ if( isset($_SESSION["logged_in"]["iduser"])){
 </head>
 <body>
 
-
-
 <?php require_once('assets/template/header.php'); ?>
 
-
 <?php
-
-
 
 if(isset($_GET['page']) && file_exists("assets/php/".$_GET['page'].'.php') ){
     
@@ -47,13 +40,9 @@ if(isset($_GET['page']) && file_exists("assets/php/".$_GET['page'].'.php') ){
     // require_once('assets/php/connexion.php');
 
 }
-
 ?>
 
-
 <?php require_once('assets/template/footer.php'); ?>
-
-
 
 </body>
 </html>
