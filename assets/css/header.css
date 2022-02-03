@@ -22,11 +22,15 @@ html, body {
     height: auto;
 }
 
-/*barre de recherche*/
-
-
 
 /*menu burger*/
+
+.content{
+    width: auto;
+    margin-right: -36em;
+    margin-left: 24em;
+    
+}
 
     /*navbar*/
 
@@ -47,9 +51,12 @@ html, body {
     /*icône*/
 
 .iconify{
+    display: flex;
+    flex-wrap: wrap;
     width: auto;
     height: 9vh;
     cursor: pointer;
+    margin: auto;
 }
 
 
@@ -57,8 +64,8 @@ html, body {
 
 #liensnav{
     position: relative;
-    left: -300px;
-    top: 120px;
+    top: 156px;
+    left: 45px;
     border-radius: 10px;
     width: 20%;
     height: auto;
@@ -73,7 +80,7 @@ html, body {
     font-weight: bold;
     text-decoration-line: none;
     border-bottom: 1px solid black;
-    height: 15px;
+    height: 25px;
     padding: 5px;
 }
 
@@ -89,6 +96,7 @@ a[href="index.php?page=profil_perso"]{
 /**/
 
 #barre_rose {
+    margin-top: -24px;
     width: 100%;
     height: 1px;
     background-color: #8F249E;
