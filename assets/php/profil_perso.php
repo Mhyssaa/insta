@@ -34,10 +34,7 @@
             <span class="iconify" data-icon="carbon:user-avatar-filled"></span>
         </div>
         <div class="info-profil">
-            <p>@<?php echo  $message["pseudo"]; ?>
-                <br>
-            <span class="description">description </span> 
-            </p>
+            <p>@<?php echo  $message["pseudo"]; ?></p>
             <div class="abonnés">
                 <?php 
                 
@@ -62,7 +59,7 @@
 }
 ?>
 
-                                    <!-- ABONNEMENT -->
+                            <!-- ABONNEMENT -->
 
 <?php
 
@@ -210,34 +207,32 @@
 ?>
 
 
-    <section id="section2">
-        <?php
-        while ($messageSimple = $recup->fetch()) {
-        ?>
-            <div class="content_post">
+<section id="section2">
+    <?php
+    while ($messageSimple = $recup->fetch()) {
+    ?>
+        <div class="content_post">
 
-                <div>
-                    <!-- Générer image -->
-                    <img id="post_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
-
-                </div>
-
-                <div id="like_com">
-
-                    <div class="heart"></div>
-                    <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span></div>
-
-                </div>
+            <div>
+                <!-- Générer image -->
+                <img id="post_img" src="assets/upload/<?php echo stripslashes($messageSimple['image']); ?>" alt="image" >
 
             </div>
-            <?php
-        }
-        ?>
-    </section>
+
+            <div id="like_com">
+
+                <div class="heart"></div>
+                <div><span class="iconify" data-icon="bi:chat" style="color: #2b2238;" data-width="30"></span></div>
+
+            </div>
+
+        </div>
+        <?php
+    }
+    ?>
+</section>
 
 
 
 <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 <script src="assets/js/script_heart.js"></script>
-
-

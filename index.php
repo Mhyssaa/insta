@@ -1,8 +1,6 @@
 <?php 
 
-
 session_start(); 
-
 
 if( isset($_SESSION["logged_in"]["iduser"])){
     
@@ -16,7 +14,6 @@ if( isset($_SESSION["logged_in"]["iduser"])){
     $type = "invite";
 
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -29,14 +26,9 @@ if( isset($_SESSION["logged_in"]["iduser"])){
 </head>
 <body>
 
-
-
 <?php require_once('assets/template/header.php'); ?>
 
-
 <?php
-
-
 
 if(isset($_GET['page']) && file_exists("assets/php/".$_GET['page'].'.php') ){
     
@@ -48,13 +40,9 @@ if(isset($_GET['page']) && file_exists("assets/php/".$_GET['page'].'.php') ){
     // require_once('assets/php/connexion.php');
 
 }
-
 ?>
 
-
 <?php require_once('assets/template/footer.php'); ?>
-
-
 
 </body>
 </html>
