@@ -42,7 +42,7 @@
 
                 ?>
 
-                <a href="assets/php/profil_update.php?followedid=<?php echo $iduser ?>&" class="subscribe-button">Modifier Profil</a> 
+                <a href="index.php?page=profil_update" class="subscribe-button">Modifier Profil</a> 
 
                 <?php    
                 }else {
